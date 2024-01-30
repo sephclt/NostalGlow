@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Inter', sans-serif;
+}
+
+.upper-nav {
+    height: 15vh;
+
+    display: grid;
+    grid-template-areas: 'first second third';
+}
+
+.about-nav, .pricing-nav, .community-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    padding: 15px 50px;
+
+    background-color: #363636;
+}
+
+.about-nav span:first-child, .pricing-nav span:first-child, .community-nav span:first-child {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.about-nav span:first-child {
+    color: #EF476F;
+}
+
+.pricing-nav span:first-child {
+    color: #FFD166;
+}
+
+.community-nav span:first-child {
+    color: #06D6A0;
+}
+
+.about-nav span:last-child a, .pricing-nav span:last-child a, .community-nav span:last-child a {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.about-nav span:last-child a:hover, .pricing-nav span:last-child a:hover, .community-nav span:last-child a:hover {
+    color: #757575;
+}
+
+@media screen and (max-width: 768px) {
+    .upper-nav {
+        grid-template-areas: 'first'
+                             'second'
+                             'third';
+    }
+
+    .about-nav, .pricing-nav, .community-nav {
+        padding: 15px 20px;
+    }
+}
