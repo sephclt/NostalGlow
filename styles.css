@@ -26,34 +26,39 @@
     justify-content: start;
     align-items: center;
 
-    background-color: #363636;
+    background-color: #1D1D1D;
 }
 
-.about-nav::before {
+.nav-button::before {
     content: '';
 
     width: 2%;
     height: 100%;
+    transition: all 0.25s ease;
+}
 
+.home-nav:hover::before {
     background-color: #EF476F;
 }
 
-.pricing-nav::before {
-    content: '';
-
-    width: 2%;
-    height: 100%;
-
+.about-nav:hover::before {
     background-color: #FFD166;
 }
 
-.community-nav::before {
-    content: '';
-
-    width: 2%;
-    height: 100%;
-
+.features-nav:hover::before {
     background-color: #06D6A0;
+}
+
+.pricing-nav:hover::before {
+    background-color: #118AB2;
+}
+
+.resources-nav:hover::before {
+    background-color: #B5179E;
+}
+
+.career-nav:hover::before {
+    background-color: #FF6B35;
 }
 
 .nav-button div {
@@ -68,76 +73,118 @@
     padding: 15px 50px;
 }
 
-.about-nav span:first-child, .pricing-nav span:first-child, .community-nav span:first-child {
+.home-nav span:first-child, .about-nav span:first-child, .features-nav span:first-child, .pricing-nav span:first-child, .resources-nav span:first-child, .career-nav span:first-child {
     font-size: 24px;
     font-weight: 600;
 }
 
-.about-nav span:first-child {
+.home-nav span:first-child {
     color: #EF476F;
 }
 
-.pricing-nav span:first-child {
+.about-nav span:first-child {
     color: #FFD166;
 }
 
-.community-nav span:first-child {
+.features-nav span:first-child {
     color: #06D6A0;
 }
 
-.about-nav span:last-child a, .pricing-nav span:last-child a, .community-nav span:last-child a {
+.pricing-nav span:first-child {
+    color: #118AB2;
+}
+
+.resources-nav span:first-child {
+    color: #B5179E;
+}
+
+.career-nav span:first-child {
+    color: #FF6B35;
+}
+
+.home-nav span:last-child a, .about-nav span:last-child a, .features-nav span:last-child a, .pricing-nav span:last-child a, .resources-nav span:last-child a, .career-nav span:last-child a{
     text-decoration: none;
     font-size: 40px;
     font-weight: 600;
     color: #fff;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 .nav-button span:last-child a:hover {
-    color: #757575;
+    color: #616161;
 }
 
 .main-content {
-    height: 75vh;
+    height: 70vh;
     display: flex;
     justify-content: start;
     align-items: start;
 
-    background: radial-gradient(712.79% 103.34% at 80.86% 35.65%, rgba(188, 160, 249, 0.39) 0%, rgba(188, 160, 249, 0.69) 29.5%, #BCA0F9 100%);
+    background-color: #131D4B;
+    color: #fff;
 }
 
 .main-content div:first-child {
-    width: 35%;
+    width: 50%;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: center;
+    align-items: end;
 
     padding: 4rem;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .main-content div:first-child h1 {
-    font-size: 48px;
+    font-size: 78px;
     font-weight: 600;
 }
 
 .main-content div:first-child p {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 400;
 }
 
-.main-content div:last-child {
-    width: 65%;
+.main-content div:first-child div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.main-content div:first-child button {
+    padding: 8px 16px;
+
+    background-color: transparent;
+    border: solid 2px #fff;
+}
+
+.main-content div:first-child button a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.25s ease;
+}
+
+.main-content div:first-child a:hover {
+    color: #b1b1b1;
+}
+
+.main-content > div:last-child {
+    width: 50%;
     height: 100%;
 
-    background-image: url('assets/goggle-final.png');
-    background-repeat: no-repeat;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
 @media screen and (max-width: 768px) {
-    .upper-nav {
+    .upper-nav, .lower-nav {
         grid-template-areas: 'first'
                              'second'
                              'third';
@@ -152,5 +199,37 @@
         flex-direction: column;
         justify-content: center;
         align-items: start;
+    }
+
+    .main-content {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .main-content div:first-child {
+        width: 100%;
+        height: 50%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 4rem;
+        gap: 1.5rem;
+    }
+
+    .main-content div:last-child {
+        width: 100%;
+        height: 50%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 4rem;
     }
 }
