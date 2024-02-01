@@ -74,7 +74,7 @@
 }
 
 .home-nav span:first-child, .about-nav span:first-child, .features-nav span:first-child, .pricing-nav span:first-child, .resources-nav span:first-child, .career-nav span:first-child {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
@@ -104,7 +104,7 @@
 
 .home-nav span:last-child a, .about-nav span:last-child a, .features-nav span:last-child a, .pricing-nav span:last-child a, .resources-nav span:last-child a, .career-nav span:last-child a{
     text-decoration: none;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 600;
     color: #fff;
     transition: all 0.25s ease;
@@ -138,12 +138,12 @@
 }
 
 .main-content div:first-child h1 {
-    font-size: 78px;
+    font-size: 4.875rem;
     font-weight: 600;
 }
 
 .main-content div:first-child p {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
 }
 
@@ -164,7 +164,7 @@
 
 .main-content div:first-child button a {
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
     color: #fff;
     transition: all 0.25s ease;
