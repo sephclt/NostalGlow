@@ -21,9 +21,15 @@ html {
     grid-template-areas: 'first second third';
 }
 
+.upper-nav {
+    border-bottom: solid 1px #5B5B5B;
+}
+
 .lower-nav {
     right: 0;
     bottom: 0;
+
+    border-top: solid 1px #5B5B5B;
 }
 
 .nav-button {
@@ -174,7 +180,7 @@ html {
     justify-content: start;
     align-items: start;
 
-    background-color: #131D4B;
+    background-color: #1D1D1D;
     color: #fff;
 }
 
