@@ -8,10 +8,15 @@
     font-family: 'Inter', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .upper-nav, .lower-nav {
     height: 15vh;
+    width: 100%;
 
-    position: sticky;
+    position: fixed;
     display: grid;
     grid-template-areas: 'first second third';
 }
@@ -58,6 +63,30 @@
 }
 
 .career-nav:hover::before {
+    background-color: #FF6B35;
+}
+
+#home-nav.clicked::before {
+    background-color: #EF476F;
+}
+
+#about-nav.clicked::before {
+    background-color: #FFD166;
+}
+
+#features-nav.clicked::before {
+    background-color: #06D6A0;
+}
+
+#pricing-nav.clicked::before {
+    background-color: #118AB2;
+}
+
+#resources-nav.clicked::before {
+    background-color: #B5179E;
+}
+
+#career-nav.clicked::before {
     background-color: #FF6B35;
 }
 
@@ -139,7 +168,8 @@
 }
 
 .main-content {
-    height: 70vh;
+    height: 100vh;
+
     display: flex;
     justify-content: start;
     align-items: start;
@@ -166,6 +196,10 @@
     font-weight: 600;
 }
 
+.main-content div:first-child h1 span {
+    color: #06D6A0;
+}
+
 .main-content div:first-child p {
     font-size: 1rem;
     font-weight: 400;
@@ -184,9 +218,10 @@
 
     background-color: transparent;
     border: solid 2px #fff;
+    transition: all 0.25s ease;
 }
 
-.main-content div:first-child button a {
+.main-content div:first-child button > a {
     text-decoration: none;
     font-size: 0.875rem;
     font-weight: 600;
@@ -194,7 +229,8 @@
     transition: all 0.25s ease;
 }
 
-.main-content div:first-child a:hover {
+.main-content div:first-child button:hover a, .main-content div:first-child button:hover {
+    border-color: #b1b1b1;
     color: #b1b1b1;
 }
 
