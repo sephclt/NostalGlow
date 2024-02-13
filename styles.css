@@ -184,7 +184,7 @@ html {
     color: #fff;
 }
 
-.main-content div:first-child {
+.home-content div:first-child {
     width: 50%;
     height: 100%;
 
@@ -197,21 +197,21 @@ html {
     gap: 1.5rem;
 }
 
-.main-content div:first-child h1 {
+.home-content div:first-child h1 {
     font-size: 4.875rem;
     font-weight: 600;
 }
 
-.main-content div:first-child h1 span {
+.home-content div:first-child h1 span {
     color: #06D6A0;
 }
 
-.main-content div:first-child p {
+.home-content div:first-child p {
     font-size: 1rem;
     font-weight: 400;
 }
 
-.main-content div:first-child div {
+.home-content div:first-child div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -219,7 +219,7 @@ html {
     gap: 1rem;
 }
 
-.main-content div:first-child button {
+.home-content div:first-child button {
     padding: 8px 16px;
 
     background-color: transparent;
@@ -227,7 +227,7 @@ html {
     transition: all 0.25s ease;
 }
 
-.main-content div:first-child button > a {
+.home-content div:first-child button > a {
     text-decoration: none;
     font-size: 0.875rem;
     font-weight: 600;
@@ -235,18 +235,53 @@ html {
     transition: all 0.25s ease;
 }
 
-.main-content div:first-child button:hover a, .main-content div:first-child button:hover {
+.home-content div:first-child button:hover a, .main-content div:first-child button:hover {
     border-color: #b1b1b1;
     color: #b1b1b1;
 }
 
-.main-content > div:last-child {
+.home-content > div:last-child {
     width: 50%;
     height: 100%;
 
     display: flex;
     justify-content: start;
     align-items: center;
+}
+
+.about-content > div:first-child {
+    width: 40%;
+    height: 100%;
+
+    padding: 48px;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-content > div:last-child {
+    width: 60%;
+    height: 100%;
+
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+}
+
+.about-content > div:last-child > h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.about-content > div:last-child > p {
+  font-size: 0.75rem;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 768px) {
