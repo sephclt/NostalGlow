@@ -284,6 +284,54 @@ html {
   font-weight: 400;
 }
 
+.about-content .stats-section {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-content .stats-section p:first-child{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.about-content .stats-section p > span {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.about-content .stats-section p:last-child {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.features-content > div{
+    width: 33%;
+    height: 100%;
+
+    padding: 256px 128px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.features-content > div > p:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.features-content > div > p {
+  font-size: 1rem;
+  font-weight: 400;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 @media screen and (max-width: 768px) {
     .upper-nav, .lower-nav {
         grid-template-areas: 'first'
