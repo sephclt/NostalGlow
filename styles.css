@@ -280,6 +280,7 @@ html {
 }
 
 .about-content > div:last-child > p {
+  width: 80%;
   font-size: 0.75rem;
   font-weight: 400;
 }
@@ -310,28 +311,31 @@ html {
     width: 33%;
     height: 100%;
 
-    padding: 256px 128px;
+    padding: 128px 64px;
 
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: center;
+    justify-content: center;
+    align-items: start;
     gap: 1rem;
 }
 
 .features-content > div > p:first-child {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
-.features-content > div > p {
-  font-size: 1rem;
-  font-weight: 400;
-
-  text-align: justify;
-  text-justify: inter-word;
+.features-content > div > div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
 }
 
+.features-content > div > div > p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
 @media screen and (max-width: 768px) {
     .upper-nav, .lower-nav {
         grid-template-areas: 'first'
