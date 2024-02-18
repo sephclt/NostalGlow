@@ -275,13 +275,13 @@ html {
 }
 
 .about-content > div:last-child > h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
 .about-content > div:last-child > p {
   width: 80%;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -293,17 +293,17 @@ html {
 }
 
 .about-content .stats-section p:first-child{
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 600;
 }
 
 .about-content .stats-section p > span {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
 .about-content .stats-section p:last-child {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -333,8 +333,90 @@ html {
 }
 
 .features-content > div > div > p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
+}
+
+/* PRICING SECTION */
+
+.pricing-sub-section {
+  width: 33.33%;
+  padding: 9rem 3rem;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pricing-sub-section > .option {
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 0.25rem;
+
+  border-right: solid 1px #5B5B5B;
+}
+
+.pricing-sub-section > .option > p {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.pricing-sub-section > .option > .price {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 0.25rem;
+}
+
+.pricing-sub-section > .option > .price > p:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.pricing-sub-section > .option > .price > p:last-child {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.pricing-sub-section > .option > .details {
+  padding: 1rem 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pricing-sub-section > .option > .details > .sub-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pricing-sub-section > .option > .details > .sub-details > p {
+  font-size: 0.875rem;
+}
+
+.pricing-sub-section button {
+  padding: 8px 16px;
+
+  background-color: transparent;
+  border: solid 2px;
+  transition: all 0.25s ease;
+}
+
+.pricing-sub-section button:hover {
+  cursor: pointer;
+  border-color: #b1b1b1;
+  color: #b1b1b1;
 }
 @media screen and (max-width: 768px) {
     .upper-nav, .lower-nav {
