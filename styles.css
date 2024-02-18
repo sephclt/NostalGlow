@@ -416,6 +416,168 @@ html {
   border-color: #b1b1b1;
   color: #b1b1b1;
 }
+
+/* RESOURCES SECTION */
+
+.resources-sub-section {
+  width: 50%;
+  height: 100%;
+  padding: 1rem 4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.resources-sub-section > p {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.resources-sub-section > .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.resources-sub-section-2 {
+  width: 50%;
+  height: 100%;
+  padding: 1rem 4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+}
+
+.resources-sub-section-2 > p {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.resources-sub-section-2 > .details > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+}
+
+.resources-sub-section-2 > .details > form > input {
+  width: 18.75rem;
+  padding: 0.5rem 2rem;
+
+  background-color: transparent;
+  border: solid 1px #b1b1b1;
+
+  font-size: 1rem;
+  color: #b1b1b1;
+}
+
+.resources-sub-section-2 > .details > form > textarea {
+  width: 37.5rem;
+  padding: 0.5rem 2rem;
+
+  background-color: transparent;
+  border: solid 1px #b1b1b1;
+
+  font-size: 1rem;
+  color: #b1b1b1;
+}
+
+.resources-sub-section-2 > .details > form > button {
+  padding: 1rem 2rem;
+
+  background-color: transparent;
+  border: solid 1px #EF476F;
+  color: #EF476F;
+  transition: all 0.25s ease;
+}
+
+/* ACCOUNT SECTION */
+.account-sub-section {
+  width: 48%;
+  height: 100%;
+  padding: 1rem 4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.account-sub-section > p {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.account-sub-section > .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.account-sub-section > .details > input {
+  width: 18.75rem;
+  padding: 0.25rem 0.5rem;
+
+  background-color: transparent;
+  border: solid 1px #fff;
+
+  font-size: 1rem;
+  color: #fff;
+}
+
+.account-sub-section > .details > a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.25s ease;
+}
+
+.account-sub-section > .details > a:hover {
+  color: #b1b1b1;
+}
+
+.account-sub-section > .details > button {
+  padding: 0.25rem 1rem;
+
+  background-color: transparent;
+  border: solid 1px #fff;
+  color: #fff;
+  transition: all 0.25s ease;
+}
+
+.account-sub-section > .details > button:hover {
+  cursor: pointer;
+  border-color: #b1b1b1;
+  color: #b1b1b1;
+}
+
+.account-mid-section {
+  width: 4%;
+  height: 100%;
+  padding: 0 4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-mid-section > p {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
 @media screen and (max-width: 768px) {
     .upper-nav, .lower-nav {
         grid-template-areas: 'first'
