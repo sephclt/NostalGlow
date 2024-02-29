@@ -9,6 +9,20 @@
 </head>
 
 <body>
+    <?php
+      $uname = $password = $firstname = $lastname = $mobile = $address = $uemail = ''; 
+      $conn = mysqli_connect('localhost', 'root', '', 'my_online_store');
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $uname = $_POST["uname"];
+        $password = $_POST["password"];
+        $uemail = $_POST["uemail"];
+      }
+
+      $sql = "INSERT INTO `profile` (`username`, `password`, `email`) VALUES ('$uname', '$password', '$uemail')";
+
+      $rs = mysqli_query($conn, $sql);
+    ?>
     <div class="upper-nav" id="upper-nav">
         <div class="home-nav nav-button" id="home-nav">
             <div>
@@ -253,7 +267,7 @@
       <div class="resources-sub-section-2">
         <p style="color: #EF476F;">CONTACT US</p>
         <div class="details">
-          <form>
+          <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <input type="email" name="email" placeholder="E-Mail">
             <textarea rows="5" cols="10" placeholder="Message"></textarea>
             <button type="submit">SEND</button>
@@ -263,13 +277,13 @@
     </div>
 
     <!-- ACCOUNT SECTION -->
-
     <div class="main-content" id="account-content">
       <div class="account-sub-section">
         <p>SIGN IN</p>
-        <form class="details">
-          <input type="email" name="email" placeholder="E-Mail">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="details">
+          <input type="text" name="uname" placeholder="Username">
           <input type="password" name="password" placeholder="Password">
+          <input type="email" name="uemail" placeholder="E-Mail">
           <a href="#">Forgot Password?</a>
           <button type="submit">SIGN IN</button>
         </form>
@@ -279,8 +293,8 @@
       </div>
       <div class="account-sub-section">
         <p>SIGN UP</p>
-        <form class="details">
-          <input type="email" name="email" placeholder="E-Mail">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="details">
+          <input type="email" name="uemail" placeholder="E-Mail">
           <input type="password" name="password" placeholder="Password">
           <input type="password" name="confirm-password" placeholder="Confirm Password">
           <a href="#">Forgot Password?</a>
