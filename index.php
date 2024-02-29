@@ -11,7 +11,7 @@
 <body>
     <?php
       $uname = $password = $firstname = $lastname = $mobile = $address = $uemail = ''; 
-      $conn = mysqli_connect('localhost', 'root', '', 'my_online_store');
+      $conn = mysqli_connect('db', 'lamp_user', 'password', 'my_online_store');
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $uname = $_POST["uname"];
