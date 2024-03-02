@@ -4,12 +4,12 @@ A website for a business that takes people's memories (consensually) and stores 
 
 ### How to run
 #### Using docker
-Ensure docker and docker-compose are installed
-Inside this directory run:
+Ensure docker and docker-compose are installed then inside this directory run:
 ```
 docker-compose up --build
 ```
 
+### Screenshots
 #### Homepage
 ![image](./assets/screenshots/0-homepage.png)
 #### About
