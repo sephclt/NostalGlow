@@ -2,6 +2,14 @@
 A website for a business that takes people's memories (consensually) and stores them in state-of-the-art capsules
 **This is just for a Project; the company doesn't exist (yet)**
 
+### How to run
+#### Using docker
+Ensure docker and docker-compose are installed
+Inside this directory run:
+```
+docker-compose up --build
+```
+
 #### Homepage
 ![image](./assets/screenshots/0-homepage.png)
 #### About
