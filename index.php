@@ -1,306 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
+    <title>NG-Bootstrap</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
 
-<body>
-    <?php
-      $uname = $password = $firstname = $lastname = $mobile = $address = $uemail = ''; 
-      $conn = mysqli_connect('db', 'lamp_user', 'password', 'my_online_store');
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  <body>
+    <div class="container-fluid position-fixed top-0">
 
-        $uname = $_POST["uname"];
-        $password = $_POST["password"];
-        $uemail = $_POST["uemail"];
-      }
-
-      $sql = "INSERT INTO `profile` (`username`, `password`, `email`) VALUES ('$uname', '$password', '$uemail')";
-
-      $rs = mysqli_query($conn, $sql);
-    ?>
-    <div class="upper-nav" id="upper-nav">
-        <div class="home-nav nav-button" id="home-nav">
-            <div>
-                <span>01</span>
-                <span><a href="#home">HOME</a></span>
-            </div>
+      <!--Top Navbar-->
+      <div class="row bg-black ng-border-bottom">
+        <div class="col px-5 py-3">
+          <h5 class="text-red fw-bold">01</h5>
+          <a href="#main-content" class="h3 text-white fw-bold home-nav" id="home-nav">Home</a>
         </div>
-        <div class="about-nav nav-button" id="about-nav">
-            <div>
-                <span>02</span>
-                <span><a href="#about-content">ABOUT</a></span>
-            </div>
+        <div class="col px-5 py-3">
+          <h5 class="text-yellow fw-bold">02</h5>
+          <a href="#about-content" class="h3 text-white fw-bold about-nav" id="about-nav">About</a>
         </div>
-        <div class="features-nav nav-button" id="features-nav">
-            <div>
-                <span>03</span>
-                <span><a href="#features-content">FEATURES</a></span>
-            </div>
+        <div class="col px-5 py-3">
+          <h5 class="text-green fw-bold">03</h5>
+          <a href="#features-content" class="h3 text-white fw-bold features-nav" id="features-nav">Features</a>
         </div>
+      </div>
+
     </div>
 
-    <!-- Home Page -->
-    <div class="home-content main-content" id="home">
-        <div>
-            <h1>NOSTAL<span>GLOW</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, cupiditate?</p>
-            <div>
-                <button>
-                    <a href="#account-content">LOG IN</a>
-                </button>
-                <button>
-                    <a href="#account-content">SIGN UP</a>
-                </button>
-            </div>
+    <div class="container-fluid position-fixed bottom-0">
+
+      <!-- Bottom Navbar -->
+      <div class="row bg-black ng-border-top">
+        <div class="col px-5 py-3">
+          <h5 class="text-blue fw-bold">04</h5>
+          <a href="#main-content" class="h3 text-white fw-bold pricing-nav" id="pricing-nav">Pricing</a>
         </div>
-        <div>
-            <img src="assets/bgless.png" alt="cybernetics" width="50%">
+        <div class="col px-5 py-3">
+          <h5 class="text-purple fw-bold">05</h5>
+          <a href="#resources-content" class="h3 text-white fw-bold resources-nav" id="resources-nav">Resources</a>
         </div>
+        <div class="col px-5 py-3">
+          <h5 class="text-orange fw-bold">06</h5>
+          <a href="#main-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
+        </div>
+      </div>
+
     </div>
 
-    <div class="lower-nav">
-        <div class="pricing-nav nav-button" id="pricing-nav">
-            <div>
-                <span>04</span>
-                <span><a href="#pricing-content">PRICING</a></span>
-            </div>
+    <!--Main Content-->
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-black text-white" id="main-content">
+
+      <!-- Landing -->
+      <div class="row">
+
+        <!-- Text -->
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+          <h1 class="display-1 fw-bold">NOSTAL<span class="display-1 fw-bold text-green">GLOW</span></h1>
+          <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+          <div class="d-flex gap-3">
+            <button class="ng-btn">Log In</button>
+            <button class="ng-btn">Sign up</button>
+          </div>
         </div>
-        <div class="resources-nav nav-button" id="resources-nav">
-            <div>
-                <span>05</span>
-                <span><a href="#resources-content">RESOURCES</a></span>
-            </div>
-        </div>
-        <div class="career-nav nav-button" id="career-nav">
-            <div>
-                <span>06</span>
-                <span><a href="#">CAREER</a></span>
-            </div>
-        </div>
+
+      </div>
+
     </div>
 
-    <!-- About Page -->
-    <div class="about-content main-content" id="about-content">
-        <div>
-          <img src="./assets/about-us-image.png" alt="image of a hand" width="50%">
-        </div>
-        <div>
-            <h1>The Company Behind This</h1>
-            <p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
-            <p>Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
-            <div class="stats-section">
-              <div class="stat">
-                <p>25<span>yrs</span></p>
-                <p>Research</p>
-              </div>
-              <div class="stat">
-                <p>98<span>%</span></p>
-                <p>Success Rate</p>
-              </div>
-              <div class="stat">
-                <p>4.5<span>/5</span></p>
-                <p>Reviews</p>
-              </div>
+    <!-- About Part -->
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-black text-white" id="about-content">
+
+      <!-- Landing -->
+      <div class="row px-5">
+
+        <!-- Text -->
+        <div class="col d-flex flex-column justify-content-center align-items-start gap-3">
+          <h1 class="h1 fw-bold">The Company Behind This</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis semper metus. Vivamus ut justo vel dolor lacinia viverra. Etiam luctus volutpat commodo. Suspendisse varius congue laoreet. Integer tempus, massa et fermentum condimentum, quam nunc maximus metus, nec eleifend dolor neque at dolor. Integer hendrerit fringilla arcu, ac ultrices diam ultrices quis. Sed mattis suscipit diam, vel blandit lorem venenatis eget.</p>
+          <p>Vestibulum aliquet faucibus elit vel tristique. In malesuada velit ut arcu auctor, nec tempor metus pulvinar. Duis enim velit, porttitor ut molestie vitae, ultricies non elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales purus id quam consectetur, nec suscipit nulla pharetra. Vestibulum vehicula maximus augue a vestibulum. Fusce quis diam ultricies leo aliquet accumsan porttitor sed ante</p>
+          <div class="d-flex gap-5">
+            <div>
+              <h3 class="text-red">25<span class="text-white">yrs</span></h3>
+              <p>Research</p>
             </div>
+            <div>
+              <h3 class="text-yellow">98<span class="text-white">%</span></h3>
+              <p>Success Rate</p>
+            </div>
+            <div>
+              <h3 class="text-green">4.5<span class="text-white">/5</span></h3>
+              <p>Reviews</p>
+            </div>
+          </div>
         </div>
+
+      </div>
+
     </div>
 
     <!-- Features -->
-    <div class="features-content main-content" id="features-content">
-      <div>
-        <p>SECURITY</p>
-        <div>
-          <img src="./assets/icons/cyber-security_5721221.png" alt="cyber-security_5721221 icon" width="48px">
-          <p>End-to-End Encryption</p>
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-black text-white" id="features-content">
+
+      <!-- Landing -->
+      <div class="row w-100 px-5">
+
+        <!-- Text -->
+        <div class="col d-flex flex-column gap-3">
+          <h2 class="fw-bold">SECURITY</h2>
+          <div class="d-flex align-items-center gap-3">
+            <img src="./assets/icons/cyber-security_5721221.png" alt="cybersecurity" width="32px">
+            <p class="mb-0 h5">End-to-end Encryption</p>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="./assets/icons/finger-scanner_5720883.png" alt="finger scanner" width="32px">
+            <p class="mb-0 h5">User Biometrics</p>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="./assets/icons/cctv_5720842.png" alt="cctv" width="32px">
+            <p class="mb-0 h5">24/7 Security Reports</p>
+          </div>
         </div>
-        <div>
-          <img src="./assets/icons/finger-scanner_5720883.png" alt="finger-scanner_5720883 icon" width="48px">
-          <p>User Biometrics</p>
+
+        <div class="col d-flex flex-column gap-3">
+          <h2 class="fw-bold">CAPSULE</h2>
+          <div class="d-flex align-items-center gap-3">
+            <img src="./assets/icons/machine-learning_5721042.png" alt="machine learning" width="32px">
+            <p class="mb-0 h5">Wireless Chip Connection</p>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="./assets/icons/virtual-reality_5721177.png" alt="virtual reality" width="32px">
+            <p class="mb-0 h5">Re-Living Goggles</p>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="./assets/icons/blockchain_5720943.png" alt="blockchain" width="32px">
+            <p class="mb-0 h5">Capsule Sharing</p>
+          </div>
         </div>
-        <div>
-          <img src="./assets/icons/cctv_5720842.png" alt="cctv_5720842 icon" width="48px">
-          <p>24/7 Security Report</p>
+
+        <div class="col d-flex flex-column gap-3">
+          <h2 class="fw-bold">SERVICE</h2>
+          <div class="d-flex align-items-center gap-3">
+            <img src="./assets/icons/drone_5721455.png" alt="drone delivery" width="32px">
+            <p class="mb-0 h5">Drone Delivery</p>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="./assets/icons/robot_5721082.png" alt="robot" width="32px">
+            <p class="mb-0 h5">Customer Supprt</p>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="./assets/icons/stop-watch_5721116.png" alt="stop watch" width="32px">
+            <p class="mb-0 h5">Fast Updates</p>
+          </div>
         </div>
+
       </div>
-      <div>
-        <p>CAPSULE</p>
-        <div>
-          <img src="./assets/icons/machine-learning_5721042.png" alt="machine-learning_5721042 icon" width="48px">
-          <p>Wireless Chip Connection</p>
-        </div>
-        <div>
-          <img src="./assets/icons/virtual-reality_5721177.png" alt="virtual-reality_5721177 icon" width="48px">
-          <p>Re-Living Goggles</p>
-        </div>
-        <div>
-          <img src="./assets/icons/blockchain_5720943.png" alt="blockchain_5720943 icon" width="48px">
-          <p>Capsule Sharing</p>
-        </div>
-      </div>
-      <div>
-        <p>SERVICE</p>
-        <div>
-          <img src="./assets/icons/drone_5721455.png" alt="drone_5721455 icon" width="48px">
-          <p>Drone Delivery</p>
-        </div>
-        <div>
-          <img src="./assets/icons/robot_5721082.png" alt="robot_5721082 icon" width="48px">
-          <p>Customer Support</p>
-        </div>
-        <div>
-          <img src="./assets/icons/stop-watch_5721116.png" alt="stop-watch_5721116 icon" width="48px">
-          <p>Fast Updates</p>
-        </div>
-      </div>
+
     </div>
 
-    <!-- PRICING SECTION -->
+    <!-- Pricing -->
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-black text-white" id="pricing-content">
 
-    <div class="main-content" id="pricing-content">
-      <div class="pricing-sub-section">
-        <div class="option">
-          <p style="color: #06D6A0">BASIC</p>
-          <div class="price">
-            <p>P250</p>
-            <p>/mo</p>
+      <!-- Landing -->
+      <div class="row w-100 px-5">
+        <div class="col d-flex flex-column justify-content-center align-items-center gap-5">
+          <h2 class="fw-bold text-green">BASIC</h2>
+          <h1 class="fw-bold">P250<span class="fw-regular">/mo</span></h1>
+          <div>
+            
           </div>
-          <div class="details">
-            <div class="sub-details">
-              <p style="font-weight: 600">1</p>
-              <p style="font-weight: 400; color: #5B5B5B;">TIME CAPSULE</p>
-            </div>
-            <div class="sub-details">
-              <p style="font-weight: 600">BASIC</p>
-              <p style="font-weight: 400; color: #5B5B5B;">THEMES & CUSTOMIZATION</p>
-            </div>
-            <div class="sub-details">
-              <p style="font-weight: 600">SERVER END</p>
-              <p style="font-weight: 400; color: #5B5B5B;">ENCRYPTION</p>
-            </div>
-          </div>
-          <button href="#" value="SELECT" style="color: #06D6A0;">SELECT</button>
         </div>
       </div>
-      <div class="pricing-sub-section">
-        <div class="option">
-          <p style="color: #EF476F">STANDARD</p>
-          <div class="price">
-            <p>P400</p>
-            <p>/mo</p>
-          </div>
-          <div class="details">
-            <div class="sub-details">
-              <p style="font-weight: 600">2</p>
-              <p style="font-weight: 400; color: #5B5B5B;">TIME CAPSULE</p>
-            </div>
-            <div class="sub-details">
-              <p style="font-weight: 600">ADVANCED</p>
-              <p style="font-weight: 400; color: #5B5B5B;">THEMES & CUSTOMIZATION</p>
-            </div>
-            <div class="sub-details">
-              <p style="font-weight: 600">SERVER END</p>
-              <p style="font-weight: 400; color: #5B5B5B;">ENCRYPTION</p>
-            </div>
-            <div class="sub-details">
-              <p style="font-weight: 600">BASIC</p>
-              <p style="font-weight: 400; color: #5B5B5B;">APP INTEGRATION</p>
-            </div>
-          </div>
-          <button href="#" value="SELECT" style="color: #06D6A0;">SELECT</button>
-        </div>
-      </div>
-      <div class="pricing-sub-section">
-        <div class="option">
-          <p style="color: #FFD166">PREMIUM</p>
-          <div class="price">
-            <p>P800</p>
-            <p>/mo</p>
-          </div>
-          <div class="details">
-            <div class="sub-details">
-              <p style="font-weight: 600">4</p>
-              <p style="font-weight: 400; color: #5B5B5B;">TIME CAPSULE</p>
-            </div>
-            <div class="sub-details">
-              <p style="font-weight: 600">EXTENDED</p>
-              <p style="font-weight: 400; color: #5B5B5B;">THEMES & CUSTOMIZATION</p>
-            </div>
-            <div class="sub-details">
-              <p style="font-weight: 600">PRIORITY</p>
-              <p style="font-weight: 400; color: #5B5B5B;">ACCESS TO NEW FEATURES</p>
-            </div>
-            <div class="sub-details">
-              <p style="font-weight: 600">END-TO-END</p>
-              <p style="font-weight: 400; color: #5B5B5B;">ENCRYPTION</p>
-            </div>
-            <div class="sub-details">
-              <p style="font-weight: 600">EXTENDED</p>
-              <p style="font-weight: 400; color: #5B5B5B;">APP INTEGRATION</p>
-            </div>
-          </div>
-          <button href="#" value="SELECT" style="color: #06D6A0;">SELECT</button>
-        </div>
-      </div>
+
     </div>
 
-    <!-- RESOURCES SECTION -->
+    <!-- Resources -->
+    <div class="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center bg-black text-white" id="resources-content">
 
-    <div class="main-content" id="resources-content">
-      <div class="resources-sub-section">
-        <p style="color: #FF6B35;">VISIT OUR SOCIALS</p>
-        <div class="details">
-          <a href="#"><img src="./assets/icons/socials/facebook_2111398.png" alt="facebook image"></a>
-          <a href="#"><img src="./assets/icons/socials/github_733553.png" alt="github image"></a>
-          <a href="#"><img src="./assets/icons/socials/instagram_2111463.png" alt="instagram image"></a>
+      <div class="row container-xl justify-content-center align-items-center gap-5">
+        
+        <!-- Visit Our Socials -->
+        <div class="col px-5 d-flex flex-column gap-3">
+          <h1 class="fw-bold">VISIT OUR SOCIALS</h1>
+          <div class="d-flex gap-5">
+            <img src="./assets/icons/socials/github_733553.png" alt="github" width="64px" height="64px">
+            <img src="./assets/icons/socials/reddit_2111589.png" alt="reddit" width="64px" height="64px">
+            <img src="./assets/icons/socials/twitter_889147.png" alt="twitter" width="64px" height="64px">
+            <img src="./assets/icons/socials/youtube_2111748.png" alt="youtube" width="64px" height="64px">
+            <img src="./assets/icons/socials/facebook_2111398.png" alt="facebook" width="64px" height="64px">
+            <img src="./assets/icons/socials/instagram_2111463.png" alt="instagram" width="64px" height="64px">
+          </div>
         </div>
-        <div class="details">
-          <a href="#"><img src="./assets/icons/socials/reddit_2111589.png" alt="reddit image"></a>
-          <a href="#"><img src="./assets/icons/socials/twitter_889147.png" alt="twitter image"></a>
-          <a href="#"><img src="./assets/icons/socials/youtube_2111748.png" alt="youtube image"></a>
-        </div>
-      </div>
-      <div class="resources-sub-section-2">
-        <p style="color: #EF476F;">CONTACT US</p>
-        <div class="details">
-          <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <input type="email" name="email" placeholder="E-Mail">
-            <textarea rows="5" cols="10" placeholder="Message"></textarea>
-            <button type="submit">SEND</button>
+
+        <!-- Contact Us -->
+        <div class="col px-5 d-flex flex-column">
+          <h1 class="fw-bold">Contact Us</h1>
+          <form class="d-flex flex-column gap-3" method="post" action="">
+            <input class="form-email" type="email" name="email" placeholder="Email">
+            <textarea class="form-message w-100" rows="8" cols="10" placeholder="Message"></textarea>
+            <button class="ng-btn w-25" type="submit">Submit</button>
           </form>
         </div>
-      </div>
-    </div>
 
-    <!-- ACCOUNT SECTION -->
-    <div class="main-content" id="account-content">
-      <div class="account-sub-section">
-        <p>SIGN IN</p>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="details">
-          <input type="text" name="uname" placeholder="Username">
-          <input type="password" name="password" placeholder="Password">
-          <input type="email" name="uemail" placeholder="E-Mail">
-          <a href="#">Forgot Password?</a>
-          <button type="submit">SIGN IN</button>
-        </form>
       </div>
-      <div class="account-mid-section">
-        <p>OR</p>
-      </div>
-      <div class="account-sub-section">
-        <p>SIGN UP</p>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="details">
-          <input type="email" name="uemail" placeholder="E-Mail">
-          <input type="password" name="password" placeholder="Password">
-          <input type="password" name="confirm-password" placeholder="Confirm Password">
-          <a href="#">Forgot Password?</a>
-          <button type="submit">SIGN UP</button>
-        </form>
-      </div>
+
     </div>
 
     <script>
@@ -321,6 +226,5 @@
             });
         }
     </script>
-</body>
-
+  </body>
 </html>
