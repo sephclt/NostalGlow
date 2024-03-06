@@ -12,22 +12,6 @@
 
   <body>
 
-    <!-- PHP Script -->
-    <?php
-      $uname = $password = $firstname = $lastname = $mobile = $address = $uemail = ''; 
-      $conn = mysqli_connect('db', 'lamp_user', 'password', 'my_online_store');
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        $uname = $_POST["uname"];
-        $password = $_POST["password"];
-        $uemail = $_POST["uemail"];
-      }
-
-      $sql = "INSERT INTO `profile` (`username`, `password`, `email`) VALUES ('$uname', '$password', '$uemail')";
-
-      $rs = mysqli_query($conn, $sql);
-    ?>
-
     <div class="container-fluid position-fixed top-0">
 
       <!--Top Navbar-->
@@ -74,10 +58,10 @@
       <!-- Landing -->
       <div class="row container-xl">
 
-        <!-- Text -->
+        <!-- @Log In -->
         <div class="col d-flex flex-column align-items-center gap-5">
           <h1 class="fw-bold">SIGN IN</h1>
-          <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form-details">
+          <form method="post" action="" class="form-details">
             <input class="form-input" type="text" name="uname" placeholder="Username">
             <input class="form-input" type="password" name="password" placeholder="Password">
             <input class="form-input" type="email" name="uemail" placeholder="E-Mail">
@@ -90,20 +74,62 @@
           <h1 class="fw-bold">OR</h1>
         </div>
 
+        <!-- @Sign Up -->
         <div class="col d-flex flex-column align-items-center gap-5">
           <h1 class="fw-bold">SIGN UP</h1>
-          <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form-details">
-            <input class="form-input" type="text" name="uname" placeholder="Username">
-            <input class="form-input" type="email" name="uemail" placeholder="E-Mail">
-            <input class="form-input" type="password" name="password" placeholder="Password">
-            <input class="form-input" type="password" name="confirm-password" placeholder="Confirm Password">
-            <button class="ng-btn" type="submit">SIGN UP</button>
+          <form method="post" action="./account-success.php" class="form-details needs-validation" novalidate>
+            <div class="w-100">
+              <input class="form-control rounded-0 bg-transparent text-white" id="username" type="text" name="uname" placeholder="Username" required>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+            <div class="w-100">
+            <input class="form-control rounded-0 bg-transparent text-white" id="email" type="email" name="uemail" placeholder="E-Mail" required>
+              <div class="invalid-feedback">
+                Please choose a valid E-Mail.
+              </div>
+            </div>
+            <div class="w-100">
+            <input class="form-control rounded-0 bg-transparent text-white" id="password" type="password" name="password" placeholder="Password" required>
+              <div class="invalid-feedback">
+                Please choose a password.
+              </div>
+            </div>
+            <div class="w-100">
+            <input class="form-control rounded-0 bg-transparent text-white" id="confirm-password" type="password" name="confirm-password" placeholder="Confirm Password" required>
+              <div class="invalid-feedback">
+                Please confirm your password.
+              </div>
+            </div>
+            <button class="ng-btn w-100" type="submit">SIGN UP</button>
           </form>
         </div>
 
       </div>
 
     </div>
+
+    <script>
+      const forms = document.querySelectorAll('.needs-validation')
+
+      const username = document.getElementById('username')
+      const email = document.getElementById('email')
+      const password = document.getElementById('password')
+      const confirm_password = document.getElementById('confirm-password')
+
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    </script>
 
   </body>
 
