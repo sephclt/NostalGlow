@@ -58,9 +58,26 @@
       <!-- Landing -->
       <div class="row container">
 
-        <div class="col-md-6">
-
-</div>
+        <!-- @Log In -->
+        <div class="col-md-4 d-flex flex-column align-items-center gap-5">
+          <h1 class="fw-bold">SIGN IN</h1>
+          <form method="post" action="" class="form-details">
+            <div class="w-100">
+              <input class="form-control rounded-0 bg-transparent text-white" id="username" type="text" name="uname" placeholder="Username" required>
+              <div class="invalid-feedback">
+                Please enter a username.
+              </div>
+            </div>
+            <div class="w-100">
+            <input class="form-control rounded-0 bg-transparent text-white" id="password" type="password" name="password" placeholder="Password" required>
+              <div class="invalid-feedback">
+                Please enter password.
+              </div>
+            </div>
+            <a class="form-details-a text-red w-100 text-center" href="#">Forgot Password?</a>
+            <button class="ng-btn w-100" type="submit">SIGN IN</button>
+          </form>
+        </div>
 
         <?php
           if (isset($_POST['uname']) && isset($_POST['password'])) {
@@ -74,6 +91,42 @@
             }
           }
         ?>
+
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <h1 class="fw-bold">OR</h1>
+        </div>
+
+        <!-- @Sign Up -->
+        <div class="col-md-4 d-flex flex-column align-items-center gap-5">
+          <h1 class="fw-bold">SIGN UP</h1>
+          <form method="post" action="./account-success.php" class="form-details needs-validation" novalidate>
+            <div class="w-100">
+              <input class="form-control rounded-0 bg-transparent text-white" id="username" type="text" name="uname" placeholder="Username" required>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+            <div class="w-100">
+            <input class="form-control rounded-0 bg-transparent text-white" id="email" type="email" name="uemail" placeholder="E-Mail" required>
+              <div class="invalid-feedback">
+                Please choose a valid E-Mail.
+              </div>
+            </div>
+            <div class="w-100">
+            <input class="form-control rounded-0 bg-transparent text-white" id="password" type="password" name="password" placeholder="Password" required>
+              <div class="invalid-feedback">
+                Please choose a password.
+              </div>
+            </div>
+            <div class="w-100">
+            <input class="form-control rounded-0 bg-transparent text-white" id="confirm-password" type="password" name="confirm-password" placeholder="Confirm Password" required>
+              <div class="invalid-feedback">
+                Please confirm your password.
+              </div>
+            </div>
+            <button class="ng-btn w-100" type="submit">SIGN UP</button>
+          </form>
+        </div>
 
       </div>
 

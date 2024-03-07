@@ -3,22 +3,18 @@ A website for a business that takes people's memories (consensually) and stores 
 **This is just for a Project; the company doesn't exist (yet)**
 
 ## How to run
+> [!TIP]
+> If possible use docker and docker-compose 
 ### Using docker
 Ensure docker and docker-compose are installed then inside this directory run:
-```
+```shell
 docker-compose up --build
 ```
+### Using XAMPP
+Copy and paste the entire directory to the htdocs folder inside your xampp directory
 
 # Screenshots
 ### Homepage
 ![image](./assets/screenshots/0-homepage.png)
 ### About
 ![image](./assets/screenshots/1-about.png)
-### Features
-![image](./assets/screenshots/2-features.png)
-### Pricing
-![image](./assets/screenshots/3-pricing.png)
-### Resources
-![image](./assets/screenshots/4-resources.png)
-### Account
-![image](./assets/screenshots/5-account.png)
