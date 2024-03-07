@@ -18,15 +18,15 @@
       <div class="row bg-black ng-border-bottom">
         <div class="col px-5 py-3">
           <h5 class="text-red fw-bold">01</h5>
-          <a href="./index.html#main-content" class="h3 text-white fw-bold home-nav" id="home-nav">Home</a>
+          <a href="../index.php#main-content" class="h3 text-white fw-bold home-nav" id="home-nav">Home</a>
         </div>
         <div class="col px-5 py-3">
           <h5 class="text-yellow fw-bold">02</h5>
-          <a href="./index.html#about-content" class="h3 text-white fw-bold about-nav" id="about-nav">About</a>
+          <a href="../index.php#about-content" class="h3 text-white fw-bold about-nav" id="about-nav">About</a>
         </div>
         <div class="col px-5 py-3">
           <h5 class="text-green fw-bold">03</h5>
-          <a href="./index.html#features-content" class="h3 text-white fw-bold features-nav" id="features-nav">Features</a>
+          <a href="../index.php#features-content" class="h3 text-white fw-bold features-nav" id="features-nav">Features</a>
         </div>
       </div>
 
@@ -38,15 +38,15 @@
       <div class="row bg-black ng-border-top">
         <div class="col px-5 py-3">
           <h5 class="text-blue fw-bold">04</h5>
-          <a href="./index.html#main-content" class="h3 text-white fw-bold pricing-nav" id="pricing-nav">Pricing</a>
+          <a href="../index.php#main-content" class="h3 text-white fw-bold pricing-nav" id="pricing-nav">Pricing</a>
         </div>
         <div class="col px-5 py-3">
           <h5 class="text-purple fw-bold">05</h5>
-          <a href="./index.html#resources-content" class="h3 text-white fw-bold resources-nav" id="resources-nav">Resources</a>
+          <a href="../index.php#resources-content" class="h3 text-white fw-bold resources-nav" id="resources-nav">Resources</a>
         </div>
         <div class="col px-5 py-3">
           <h5 class="text-orange fw-bold">06</h5>
-          <a href="./index.html#main-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
+          <a href="../index.php#main-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
         </div>
       </div>
 
@@ -61,14 +61,36 @@
         <!-- @Log In -->
         <div class="col d-flex flex-column align-items-center gap-5">
           <h1 class="fw-bold">SIGN IN</h1>
-          <form method="post" action="" class="form-details">
-            <input class="form-input" type="text" name="uname" placeholder="Username">
-            <input class="form-input" type="password" name="password" placeholder="Password">
-            <input class="form-input" type="email" name="uemail" placeholder="E-Mail">
-            <a class="form-details-a text-red" href="#">Forgot Password?</a>
-            <button class="ng-btn" type="submit">SIGN IN</button>
+          <form method="post" action="./account-success.php" class="form-details">
+            <div class="w-100">
+              <input class="form-control rounded-0 bg-transparent text-white" id="username" type="text" name="uname" placeholder="Username" required>
+              <div class="invalid-feedback">
+                Please enter a username.
+              </div>
+            </div>
+            <div class="w-100">
+            <input class="form-control rounded-0 bg-transparent text-white" id="password" type="password" name="password" placeholder="Password" required>
+              <div class="invalid-feedback">
+                Please enter password.
+              </div>
+            </div>
+            <a class="form-details-a text-red w-100 text-center" href="#">Forgot Password?</a>
+            <button class="ng-btn w-100" type="submit">SIGN IN</button>
           </form>
         </div>
+
+        <?php
+          if (isset($_POST['uname']) && isset($_POST['password'])) {
+            $uname = $_POST['uname'];
+            $password = $_POST['password'];
+
+            if ($password == $confirm_password) {
+              echo "<script>alert('Account created successfully!')</script>";
+            } else {
+              echo "<script>alert('Passwords do not match!')</script>";
+            }
+          }
+        ?>
 
         <div class="col d-flex justify-content-center align-items-center">
           <h1 class="fw-bold">OR</h1>

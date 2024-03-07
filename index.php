@@ -57,12 +57,12 @@
       <div class="row">
 
         <!-- Text -->
-        <div class="col d-flex flex-column justify-content-center align-items-center">
+        <div class="col d-flex flex-column justify-content-center align-items-center text-center">
           <h1 class="display-1 fw-bold">NOSTAL<span class="display-1 fw-bold text-green">GLOW</span></h1>
           <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
           <div class="d-flex gap-3">
-            <button class="ng-btn">Log In</button>
-            <button class="ng-btn">Sign up</button>
+            <button class="ng-btn" onclick="window.location.href='./pages/account-outside.php'">Log In</button>
+            <button class="ng-btn" onclick="window.location.href='./pages/account-outside.php'">Sign up</button>
           </div>
         </div>
 
