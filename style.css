@@ -11,76 +11,80 @@
   line-height: 1.5;
 }
 
-.text-red {
+.ng-text-red {
   color: #EF476F;
 }
 
-.text-yellow {
+.ng-text-yellow {
   color: #FFD166;
 }
 
-.text-green {
+.ng-text-green {
   color: #06D6A0;
 }
 
-.text-blue {
+.ng-text-blue {
   color: #118AB2;
 }
 
-.text-purple {
+.ng-text-purple {
   color: #8338EC;
 }
 
-.text-orange {
+.ng-text-orange {
   color: #FF6B6B;
 }
 
-.text-black {
+.ng-text-black {
   color: #1D1D1D;
 }
 
-.text-white {
+.ng-text-white {
   color: #F5F5F5;
 }
 
-.text-gray {
+.ng-text-gray {
   color: #5b5b5b;
 }
 
-.bg-red {
+.ng-bg-red {
   background-color: #EF476F;
 }
 
-.bg-yellow {
+.ng-bg-yellow {
   background-color: #FFD166;
 }
 
-.bg-green {
+.ng-bg-green {
   background-color: #06D6A0;
 }
 
-.bg-blue {
+.ng-bg-blue {
   background-color: #118AB2;
 }
 
-.bg-purple {
+.ng-bg-purple {
   background-color: #8338EC;
 }
 
-.bg-orange {
+.ng-bg-orange {
   background-color: #FF6B6B;
 }
 
-.bg-black {
+.ng-bg-black {
   background-color: #1D1D1D;
 }
 
-.bg-white {
+.ng-bg-white {
   background-color: #F5F5F5;
 }
 
-.bg-gray {
+.ng-bg-gray {
   background-color: #5b5b5b;
+}
+
+.ng-bg-dark {
+  background-color: #202020;
 }
 
 .ng-btn {
@@ -93,8 +97,38 @@
   transition: all 0.3s ease;
 }
 
+.ng-btn-red {
+  padding: 0.5rem 1rem;
+
+  color: #EF476F;
+  background-color: transparent;
+  border: 1px solid #EF476F;
+
+  transition: all 0.3s ease;
+}
+
+.ng-btn-yellow {
+  padding: 0.5rem 1rem;
+
+  color: #FFD166;
+  background-color: transparent;
+  border: 1px solid #FFD166;
+
+  transition: all 0.3s ease;
+}
+
 .ng-btn:hover {
   background-color: #06D6A0;
+  color: #F5F5F5;
+}
+
+.ng-btn-red:hover {
+  background-color: #EF476F;
+  color: #F5F5F5;
+}
+
+.ng-btn-yellow:hover {
+  background-color: #FFD166;
   color: #F5F5F5;
 }
 

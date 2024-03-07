@@ -4,7 +4,7 @@ A website for a business that takes people's memories (consensually) and stores 
 
 ## How to run
 > [!TIP]
-> If possible use docker and docker-compose 
+> If possible use docker and docker-compose
 ### Using docker
 Ensure docker and docker-compose are installed then inside this directory run:
 ```shell
@@ -13,7 +13,7 @@ docker-compose up --build
 ### Using XAMPP
 Copy and paste the entire directory to the htdocs folder inside your xampp directory
 
-# Screenshots
+## Screenshots
 ### Homepage
 ![image](./assets/screenshots/0-homepage.png)
 ### About
