@@ -11,10 +11,16 @@ Ensure docker and docker-compose are installed then inside this directory run:
 docker-compose up --build
 ```
 ### Using XAMPP
-Copy and paste the entire directory to the htdocs folder inside your xampp directory
+Copy the everything inside the htdocs folder to the htdocs folder of your xampp directory
 
 ## Screenshots
 ### Homepage
-![image](./assets/screenshots/0-homepage.png)
+![homepage](./assets/screenshots/0-homepage.png)
 ### About
-![image](./assets/screenshots/1-about.png)
+![about](./assets/screenshots/1-about.png)
+### Features
+![features](./assets/screenshots/2-features.png)
+### Pricing
+![pricing](./assets/screenshots/3-pricing.png)
+### Sign Up
+![signup](./assets/screenshots/6-signup.png)
