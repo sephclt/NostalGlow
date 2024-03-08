@@ -63,24 +63,45 @@
             <div class="ng-text-red invisible" id="error_box">
               <p id="error_msg"></p>
             </div>
-            <form class="needs-validation" action="./account-success.php" method="post" novalidate>
-              <div class="text-start mb-3">
-                <label for="username" class="form-label fw-bold">Username</label>
-                <input class="form-control bg-transparent text-white rounded-0" type="text" name="username" id="username" required>
+            <form class="row needs-validation" action="./account-success.php" method="post" novalidate>
+              <div class="col-6">
+                <div class="text-start mb-3">
+                  <label for="username" class="form-label fw-bold">Username</label>
+                  <input class="form-control bg-transparent text-white rounded-0" type="text" name="username" id="username" required>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="email" class="form-label fw-bold">Email</label>
+                  <input class="form-control bg-transparent text-white rounded-0" type="email" name="email" id="email" required>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="password" class="form-label fw-bold">Password</label>
+                  <input class="form-control bg-transparent text-white rounded-0" type="password" name="password" id="password" required>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="confirm-password" class="form-label fw-bold">Confirm Password</label>
+                  <input class="form-control bg-transparent text-white rounded-0" type="password" name="confirm-password" id="confirm-password" required>
+                </div>
               </div>
-              <div class="text-start mb-3">
-                <label for="email" class="form-label fw-bold">Email</label>
-                <input class="form-control bg-transparent text-white rounded-0" type="email" name="email" id="email" required>
+
+              <div class="col-6">
+                <div class="text-start mb-3">
+                  <label for="firstName" class="form-label fw-bold">First Name</label>
+                  <input class="form-control bg-transparent text-white rounded-0" type="text" name="firstName" id="firstName" required>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="lastName" class="form-label fw-bold">Last Name</label>
+                  <input class="form-control bg-transparent text-white rounded-0" type="email" name="lastName" id="lastName" required>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="address" class="form-label fw-bold">Address</label>
+                  <input class="form-control bg-transparent text-white rounded-0" type="text" name="address" id="address" required>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="contact" class="form-label fw-bold">Contact #</label>
+                  <input class="form-control bg-transparent text-white rounded-0" type="text" name="contact" id="contact" required>
+                </div>
               </div>
-              <div class="text-start mb-3">
-                <label for="password" class="form-label fw-bold">Password</label>
-                <input class="form-control bg-transparent text-white rounded-0" type="password" name="password" id="password" required>
-              </div>
-              <div class="text-start mb-3">
-                <label for="confirm-password" class="form-label fw-bold">Confirm Password</label>
-                <input class="form-control bg-transparent text-white rounded-0" type="password" name="confirm-password" id="confirm-password" required>
-              </div>
-              <div class="d-flex align-items-center">
+              <div class="col-12 d-flex align-items-center">
                 <button class="ng-btn" type="submit">SIGN UP</button>
                 <a href="./account-login.php" class="ng-text-blue text-decoration-none ms-3">Already have an account?</a>
               </div>
@@ -98,6 +119,12 @@
       const email = document.getElementById('email')
       const password = document.getElementById('password')
       const confirm_password = document.getElementById('confirm-password')
+
+      const first_name = document.getElementById('firstName')
+      const last_name = document.getElementById('lastName')
+      const address = document.getElementById('address')
+      const contact = document.getElementById('contact')
+
       const error_box = document.getElementById('error_box')
       const error_msg = document.getElementById('error_msg')
 
@@ -121,10 +148,6 @@
         .forEach(function (form) {
           form.addEventListener('submit', function (event) {
             clearErrorLog()
-            if (!form.checkValidity()) {
-              event.preventDefault()
-              event.stopPropagation()
-            }
 
             // Validate username
             if (username.value.match(/[^a-zA-Z0-9_]/g)) {
@@ -145,6 +168,7 @@
               username.classList.add('is-valid')
             }
 
+            // Validate Password
             if (password.value !== confirm_password.value) {
               removeValidation(password)
               removeValidation(confirm_password)
@@ -158,7 +182,6 @@
               removeValidation(confirm_password)
               password.classList.add('is-valid')
               confirm_password.classList.add('is-valid')
-              console.log("haha yes")
             }
 
             if (password.value.length < 8) {
@@ -172,15 +195,61 @@
               confirm_password.classList.add('is-valid')
             }
 
+            // Validate Email
             if (email.value.length < 1) {
               removeValidation(email)
               email.classList.add('is-invalid')
-              error_log.push('- Email cannot be empty')
             } else {
               removeValidation(email)
               email.classList.add('is-valid')
             }
 
+            // Validate First Name
+            if (first_name.value.length < 1) {
+              removeValidation(first_name)
+              first_name.classList.add('is-invalid')
+            } else {
+              removeValidation(first_name)
+              first_name.classList.add('is-valid')
+            }
+
+            // Validate Last Name
+            if (last_name.value.length < 1) {
+              removeValidation(last_name)
+              last_name.classList.add('is-invalid')
+            } else {
+              removeValidation(last_name)
+              last_name.classList.add('is-valid')
+            }
+
+            // Validate Address
+            if (address.value.length < 1) {
+              removeValidation(address)
+              address.classList.add('is-invalid')
+            } else {
+              removeValidation(address)
+              address.classList.add('is-valid')
+            }
+
+            // Validate Contact
+            if (contact.value.length < 1) {
+              removeValidation(contact)
+              contact.classList.add('is-invalid')
+            } else {
+              removeValidation(contact)
+              contact.classList.add('is-valid')
+            }
+
+            if (contact.value.match(/[^0-9]/g)) {
+              removeValidation(contact)
+              contact.classList.add('is-invalid')
+              error_log.push('- Contact number must be numeric')
+            } else {
+              removeValidation(contact)
+              contact.classList.add('is-valid')
+            }
+
+            // Display error message
             if (error_log.length > 0) {
               event.preventDefault()
               event.stopPropagation()
