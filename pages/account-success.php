@@ -13,7 +13,7 @@
     <!-- PHP Script -->
     <?php
       $username = $password = $firstName = $lastName = $contact = $address = $email = ''; 
-      $conn = mysqli_connect('db', 'lamp_user', 'password', 'my_online_store');
+      $conn = mysqli_connect('db', 'root', '', 'my_online_store');
 
       function checkExistingUser($conn, $username, $email) {
         $username = mysqli_real_escape_string($conn, $username);
