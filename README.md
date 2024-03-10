@@ -11,7 +11,7 @@ Ensure docker and docker-compose are installed then inside this directory run:
 docker-compose up --build
 ```
 ### Using XAMPP
-Copy the everything inside the htdocs folder to the htdocs folder of your xampp directory
+Copy the entire folder inside the XAMPP directory htdocs folder. Import the database inside the database folder to phpmyadmin.
 
 ## Screenshots
 ### Homepage
