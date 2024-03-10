@@ -4,8 +4,8 @@ services:
     image: mysql:latest
     environment: 
       MYSQL_DATABASE: my_online_store
-      MYSQL_USER: lamp_user
-      MYSQL_PASSWORD: password
+      MYSQL_USER: root
+      # MYSQL_PASSWORD: password
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
       - "./database:/docker-entrypoint-initdb.d"
