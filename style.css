@@ -92,7 +92,7 @@
 
   color: #06D6A0;
   background-color: transparent;
-  border: 1px solid #06D6A0;
+  border: 2px solid #06D6A0;
 
   transition: all 0.3s ease;
 }
@@ -102,7 +102,7 @@
 
   color: #EF476F;
   background-color: transparent;
-  border: 1px solid #EF476F;
+  border: 2px solid #EF476F;
 
   transition: all 0.3s ease;
 }
@@ -112,7 +112,7 @@
 
   color: #FFD166;
   background-color: transparent;
-  border: 1px solid #FFD166;
+  border: 2px solid #FFD166;
 
   transition: all 0.3s ease;
 }
