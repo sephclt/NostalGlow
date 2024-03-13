@@ -11,6 +11,49 @@
 </head>
 
 <body>
+  <?php
+  $basic = array();
+  $standard = array();
+  $premium = array();
+  $conn = mysqli_connect('db', 'root', '', 'my_online_store');
+
+  $sql_basic = "SELECT price, timeCapsule, themes, encryption, integration, newFeatures FROM `products` WHERE `itemname` = 'Basic'";
+  $sql_standard = "SELECT price, timeCapsule, themes, encryption, integration, newFeatures FROM `products` WHERE `itemname` = 'Standard'";
+  $sql_premium = "SELECT price, timeCapsule, themes, encryption, integration, newFeatures FROM `products` WHERE `itemname` = 'Premium'";
+
+  $rs_basic = mysqli_query($conn, $sql_basic);
+  $rs_standard = mysqli_query($conn, $sql_standard);
+  $rs_premium = mysqli_query($conn, $sql_premium);
+
+  if (!$rs_basic || !$rs_standard || !$rs_premium) {
+    die('Error: ' . mysqli_error($conn));
+  }
+
+  $row_basic = mysqli_fetch_row($rs_basic);
+  $row_standard = mysqli_fetch_row($rs_standard);
+  $row_premium = mysqli_fetch_row($rs_premium);
+
+  $basic['price'] = $row_basic[0];
+  $basic['timeCapsule'] = $row_basic[1];
+  $basic['themes'] = $row_basic[2];
+  $basic['encryption'] = $row_basic[3];
+  $basic['integration'] = $row_basic[4];
+  $basic['newFeatures'] = $row_basic[5];
+
+  $standard['price'] = $row_standard[0];
+  $standard['timeCapsule'] = $row_standard[1];
+  $standard['themes'] = $row_standard[2];
+  $standard['encryption'] = $row_standard[3];
+  $standard['integration'] = $row_standard[4];
+  $standard['newFeatures'] = $row_standard[5];
+
+  $premium['price'] = $row_premium[0];
+  $premium['timeCapsule'] = $row_premium[1];
+  $premium['themes'] = $row_premium[2];
+  $premium['encryption'] = $row_premium[3];
+  $premium['integration'] = $row_premium[4];
+  $premium['newFeatures'] = $row_premium[5];
+  ?>
   <div class="container-fluid position-fixed top-0">
 
     <!--Top Navbar-->
@@ -69,20 +112,20 @@
           </div>
 
           <div>
-            <h1 class="fw-bold mb-0">P250 <span class="fw-none">/mo</span></h1>
+            <h1 class="fw-bold mb-0">P<?php echo $basic['price'] ?> <span class="fw-none">/mo</span></h1>
           </div>
 
           <div class="d-flex flex-column">
             <div class="text-center">
-              <p class="h5">1</p>
+              <p class="h5"><?php echo $basic['timeCapsule'] ?></p>
               <p class="ng-text-gray">TIME CAPSULE</p>
             </div>
             <div class="text-center">
-              <p class="h5">BASIC</p>
+              <p class="h5 text-uppercase"><?php echo $basic['themes'] ?></p>
               <p class="ng-text-gray">THEMES & CUSTOMIZATION</p>
             </div>
             <div class="text-center">
-              <p class="h5">SERVER END</p>
+              <p class="h5 text-uppercase"><?php echo $basic['encryption'] ?></p>
               <p class="ng-text-gray">ENCRYPTION</p>
             </div>
           </div>
@@ -98,24 +141,24 @@
           </div>
 
           <div>
-            <h1 class="fw-bold mb-0">P250 <span class="fw-none">/mo</span></h1>
+            <h1 class="fw-bold mb-0">P<?php echo $standard['price'] ?> <span class="fw-none">/mo</span></h1>
           </div>
 
           <div class="d-flex flex-column">
             <div class="text-center">
-              <p class="h5">2</p>
+              <p class="h5"><?php echo $standard['timeCapsule'] ?></p>
               <p class="ng-text-gray">TIME CAPSULE</p>
             </div>
             <div class="text-center">
-              <p class="h5">ADVANCED</p>
+              <p class="h5 text-uppercase"><?php echo $standard['themes'] ?></p>
               <p class="ng-text-gray">THEMES & CUSTOMIZATION</p>
             </div>
             <div class="text-center">
-              <p class="h5">SERVER END</p>
+              <p class="h5 text-uppercase"><?php echo $standard['encryption'] ?></p>
               <p class="ng-text-gray">ENCRYPTION</p>
             </div>
             <div class="text-center">
-              <p class="h5">BASIC</p>
+              <p class="h5 text-uppercase"><?php echo $standard['integration'] ?></p>
               <p class="ng-text-gray">APP INTEGRATION</p>
             </div>
           </div>
@@ -131,28 +174,28 @@
           </div>
 
           <div>
-            <h1 class="fw-bold mb-0">P800 <span class="fw-none">/mo</span></h1>
+            <h1 class="fw-bold mb-0">P<?php echo $premium['price'] ?> <span class="fw-none">/mo</span></h1>
           </div>
 
           <div class="d-flex flex-column">
             <div class="text-center">
-              <p class="h5">4</p>
+              <p class="h5"><?php echo $premium['timeCapsule'] ?></p>
               <p class="ng-text-gray">TIME CAPSULE</p>
             </div>
             <div class="text-center">
-              <p class="h5">EXTENDED</p>
+              <p class="h5 text-uppercase"><?php echo $premium['themes'] ?></p>
               <p class="ng-text-gray">THEMES & CUSTOMIZATION</p>
             </div>
             <div class="text-center">
-              <p class="h5">END-TO-END</p>
+              <p class="h5 text-uppercase"><?php echo $premium['encryption'] ?></p>
               <p class="ng-text-gray">ENCRYPTION</p>
             </div>
             <div class="text-center">
-              <p class="h5">EXTENDED</p>
+              <p class="h5 text-uppercase"><?php echo $premium['integration'] ?></p>
               <p class="ng-text-gray">APP INTEGRATION</p>
             </div>
             <div class="text-center">
-              <p class="h5">PRIORITY</p>
+              <p class="h5 text-uppercase"><?php echo $premium['newFeatures'] ?></p>
               <p class="ng-text-gray">ACCESS TO NEW FEATURES</p>
             </div>
           </div>
