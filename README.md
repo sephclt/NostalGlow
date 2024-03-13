@@ -24,3 +24,8 @@ Copy the entire folder inside the XAMPP directory htdocs folder. Import the data
 ![pricing](./assets/screenshots/3-pricing.png)
 ### Sign Up
 ![signup](./assets/screenshots/6-signup.png)
+
+# Todo
+- [ ] Sign In page
+- [ ] Resources Page
+- [ ] Database log table
