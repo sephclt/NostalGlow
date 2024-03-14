@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ng-text-red {
+  color: #EF476F;
+}
+
+.ng-text-yellow {
+  color: #FFD166;
+}
+
+.ng-text-green {
+  color: #06D6A0;
+}
+
+.ng-text-blue {
+  color: #118AB2;
+}
+
+.ng-text-purple {
+  color: #8338EC;
+}
+
+.ng-text-orange {
+  color: #FF6B6B;
+}
+
+.ng-text-black {
+  color: #1D1D1D;
+}
+
+.ng-text-white {
+  color: #F5F5F5;
+}
+
+.ng-text-gray {
+  color: #5b5b5b;
+}
+
+.ng-bg-red {
+  background-color: #EF476F;
+}
+
+.ng-bg-yellow {
+  background-color: #FFD166;
+}
+
+.ng-bg-green {
+  background-color: #06D6A0;
+}
+
+.ng-bg-blue {
+  background-color: #118AB2;
+}
+
+.ng-bg-purple {
+  background-color: #8338EC;
+}
+
+.ng-bg-orange {
+  background-color: #FF6B6B;
+}
+
+.ng-bg-black {
+  background-color: #1D1D1D;
+}
+
+.ng-bg-white {
+  background-color: #F5F5F5;
+}
+
+.ng-bg-gray {
+  background-color: #5b5b5b;
+}
+
+.ng-bg-dark {
+  background-color: #202020;
+}
+
+.ng-btn {
+  padding: 0.5rem 1rem;
+
+  color: #06D6A0;
+  background-color: transparent;
+  border: 2px solid #06D6A0;
+
+  transition: all 0.3s ease;
+}
+
+.ng-btn-red {
+  padding: 0.5rem 1rem;
+
+  color: #EF476F;
+  background-color: transparent;
+  border: 2px solid #EF476F;
+
+  transition: all 0.3s ease;
+}
+
+.ng-btn-yellow {
+  padding: 0.5rem 1rem;
+
+  color: #FFD166;
+  background-color: transparent;
+  border: 2px solid #FFD166;
+
+  transition: all 0.3s ease;
+}
+
+.ng-btn:hover {
+  background-color: #06D6A0;
+  color: #F5F5F5;
+}
+
+.ng-btn-red:hover {
+  background-color: #EF476F;
+  color: #F5F5F5;
+}
+
+.ng-btn-yellow:hover {
+  background-color: #FFD166;
+  color: #F5F5F5;
+}
+
+.ng-border-bottom {
+  border-bottom: 1px solid #5b5b5b;
+}
+
+.ng-border-top {
+  border-top: 1px solid #5b5b5b;
+}
+
+.home-nav {
+  text-decoration: none;
+  text-decoration-color: #EF476F;
+
+  transition: all 0.3s ease;
+}
+
+.home-nav:hover {
+  text-decoration: underline;
+  text-decoration-color: #EF476F;
+}
+
+#home-nav.clicked {
+  text-decoration: underline;
+  text-decoration-color: #EF476F;
+}
+
+.about-nav {
+  text-decoration: none;
+  text-decoration-color: #FFD166;
+
+  transition: all 0.3s ease;
+}
+
+.about-nav:hover {
+  text-decoration: underline;
+  text-decoration-color: #FFD166;
+}
+
+#about-nav.clicked {
+  text-decoration: underline;
+  text-decoration-color: #FFD166;
+}
+
+.features-nav {
+  text-decoration: none;
+  text-decoration-color: #06D6A0;
+
+  transition: all 0.3s ease;
+}
+
+.features-nav:hover {
+  text-decoration: underline;
+  text-decoration-color: #06D6A0;
+}
+
+#features-nav.clicked {
+  text-decoration: underline;
+  text-decoration-color: #06D6A0;
+}
+
+.pricing-nav {
+  text-decoration: none;
+  text-decoration-color: #118AB2;
+
+  transition: all 0.3s ease;
+}
+
+.pricing-nav:hover {
+  text-decoration: underline;
+  text-decoration-color: #118AB2;
+}
+
+#pricing-nav.clicked {
+  text-decoration: underline;
+  text-decoration-color: #118AB2;
+}
+
+.resources-nav {
+  text-decoration: none;
+  text-decoration-color: #8338EC;
+
+  transition: all 0.3s ease;
+}
+
+.resources-nav:hover {
+  text-decoration: underline;
+  text-decoration-color: #8338EC;
+}
+
+#resources-nav.clicked {
+  text-decoration: underline;
+  text-decoration-color: #8338EC;
+}
+
+.career-nav {
+  text-decoration: none;
+  text-decoration-color: #FF6B6B;
+
+  transition: all 0.3s ease;
+}
+
+.career-nav:hover {
+  text-decoration: underline;
+  text-decoration-color: #FF6B6B;
+}
+
+#career-nav.clicked {
+  text-decoration: underline;
+  text-decoration-color: #FF6B6B;
+}
+
+.form-email {
+  width: 18.75rem;
+  padding: 0.5rem 0.5rem;
+
+  background-color: transparent;
+  border: solid 1px #b1b1b1;
+
+  font-size: 1rem;
+  color: #b1b1b1;
+}
+
+.form-message {
+  width: 37.5rem;
+  padding: 0.5rem 0.5rem;
+
+  background-color: transparent;
+  border: solid 1px #b1b1b1;
+
+  font-size: 1rem;
+  color: #b1b1b1;
+}
+
+.form-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.form-details-a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.25s ease;
+}
+
+.form-input {
+  width: 18.75rem;
+  padding: 0.25rem 0.5rem;
+
+  background-color: transparent;
+  border: solid 1px #fff;
+
+  font-size: 1rem;
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
