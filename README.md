@@ -11,7 +11,7 @@ Ensure docker and docker-compose are installed then inside this directory run:
 docker-compose up --build
 ```
 ### Using XAMPP
-Copy everything inside the htdocs folder to the htdocs folder on your XAMPP directory
+Copy the NostalGlow folder inside of the htdocs folder to the htdocs folder of your XAMPP directory
 
 ## Screenshots
 ### Homepage
@@ -26,6 +26,6 @@ Copy everything inside the htdocs folder to the htdocs folder on your XAMPP dire
 ![signup](./assets/screenshots/6-signup.png)
 
 # Todo
-- [ ] Sign In page
+- [x] Sign In page
 - [ ] Resources Page
 - [ ] Database log table
