@@ -17,7 +17,7 @@ services:
     image: php:8.3.3-apache
     build: ./php-mysql
     volumes:
-      - "./:/var/www/html"
+      - "./src:/var/www/html"
     ports:
       - 80:80
       - 443:443
