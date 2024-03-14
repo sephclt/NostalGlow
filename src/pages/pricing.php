@@ -17,9 +17,9 @@
   $premium = array();
   $conn = mysqli_connect('db', 'root', '', 'my_online_store');
 
-  $sql_basic = "SELECT price, timeCapsule, themes, encryption, integration, newFeatures FROM `products` WHERE `itemname` = 'Basic'";
-  $sql_standard = "SELECT price, timeCapsule, themes, encryption, integration, newFeatures FROM `products` WHERE `itemname` = 'Standard'";
-  $sql_premium = "SELECT price, timeCapsule, themes, encryption, integration, newFeatures FROM `products` WHERE `itemname` = 'Premium'";
+  $sql_basic = "SELECT price, capsule, themes, encryption, integration, newFeatures FROM `products` WHERE `item_name` = 'Basic'";
+  $sql_standard = "SELECT price, capsule, themes, encryption, integration, newFeatures FROM `products` WHERE `item_name` = 'Standard'";
+  $sql_premium = "SELECT price, capsule, themes, encryption, integration, newFeatures FROM `products` WHERE `item_name` = 'Premium'";
 
   $rs_basic = mysqli_query($conn, $sql_basic);
   $rs_standard = mysqli_query($conn, $sql_standard);

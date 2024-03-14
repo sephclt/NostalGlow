@@ -14,52 +14,33 @@
 
   <!-- PHP Script -->
   <?php
-  $username = $password = $firstName = $lastName = $contact = $address = $email = '';
+  $password = $email = '';
   $conn = mysqli_connect('db', 'root', '', 'my_online_store');
 
-  function checkExistingUser($conn, $username, $email)
-  {
-    $username = mysqli_real_escape_string($conn, $username);
-    $email = mysqli_real_escape_string($conn, $email);
-    $sql = "SELECT * FROM `profiles` WHERE `username` = '$username' OR `email` = '$email'";
-    $rs = mysqli_query($conn, $sql);
-
-    if (!$rs) {
-      die('Error: ' . mysqli_error($conn));
-    }
-
-    $row = mysqli_fetch_row($rs);
-    $count = $row[0];
-    return $count > 0;
-  }
-
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
     $password = $_POST["password"];
     $email = $_POST["email"];
-    $firstName = $_POST["firstName"];
-    $lastName = $_POST["lastName"];
-    $contact = $_POST["contact"];
-    $address = $_POST["address"];
   }
 
-  $page_message = '';
-  $button_text = '';
-  $button_link = '';
+  $username = mysqli_real_escape_string($conn, $username);
+  $email = mysqli_real_escape_string($conn, $email);
+  $sql = "SELECT `password` FROM `profiles` WHERE `email` = '$email'";
+  $rs = mysqli_query($conn, $sql);
 
-  if (checkExistingUser($conn, $username, $email)) {
-    echo "Username or email already exists";
-    $page_message = "Username or email already exists";
-    $button_text = "Try Again";
-    $button_link = "./account-signup.html";
-  } else {
-    echo "Account Created";
-    $page_message = "Account Created";
+  if (!$rs) {
+    die('Error: ' . mysqli_error($conn));
+  }
+
+  $row = mysqli_fetch_row($rs);
+
+  if ($row[0] == $password) {
+    $page_message = "Login Successful";
     $button_text = "Go Back";
     $button_link = "../index.html#main-content";
-
-    $sql = "INSERT INTO `profiles` (`username`, `email`, `password`, `first_name`, `last_name`, `address`, `contact`) VALUES ('$username', '$email', '$password', '$firstName', '$lastName', '$address', '$contact')";
-    $rs = mysqli_query($conn, $sql);
+  } else {
+    $page_message = "Invalid Password";
+    $button_text = "Try Again";
+    $button_link = "./account-login.html";
   }
   ?>
 
