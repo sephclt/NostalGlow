@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 14, 2024 at 05:07 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Host: db:3306
+-- Generation Time: Mar 15, 2024 at 08:20 AM
+-- Server version: 8.3.0
+-- PHP Version: 8.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,18 +24,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `log_table`
+--
+
+CREATE TABLE `log_table` (
+  `log_id` int NOT NULL,
+  `action` varchar(30) NOT NULL,
+  `timestamp` timestamp NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `log_table`
+--
+
+INSERT INTO `log_table` (`log_id`, `action`, `timestamp`) VALUES
+(1, 'insert', '2024-03-15 08:19:37');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
-  `item_id` int(11) NOT NULL,
-  `item_name` varchar(30) NOT NULL,
+  `item_id` int NOT NULL,
+  `item_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
   `price` decimal(10,1) DEFAULT NULL,
-  `capsule` int(11) DEFAULT NULL,
-  `themes` enum('Basic','Advanced','Extended') DEFAULT NULL,
-  `encryption` enum('Server End','End-to-End') DEFAULT NULL,
-  `integration` enum('Basic','Advanced','Extended') DEFAULT NULL,
-  `newFeatures` enum('Priority') DEFAULT NULL
+  `capsule` int DEFAULT NULL,
+  `themes` enum('Basic','Advanced','Extended') COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `encryption` enum('Server End','End-to-End') COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `integration` enum('Basic','Advanced','Extended') COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `newFeatures` enum('Priority') COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -54,19 +73,44 @@ INSERT INTO `products` (`item_id`, `item_name`, `price`, `capsule`, `themes`, `e
 --
 
 CREATE TABLE `profiles` (
-  `user_id` int(11) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `first_name` varchar(30) NOT NULL,
-  `last_name` varchar(30) NOT NULL,
-  `address` varchar(50) NOT NULL,
-  `contact` varchar(12) NOT NULL
+  `user_id` int NOT NULL,
+  `username` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `first_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `last_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `address` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `contact` varchar(12) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `profiles`
+--
+
+INSERT INTO `profiles` (`user_id`, `username`, `email`, `password`, `first_name`, `last_name`, `address`, `contact`) VALUES
+(1, 'adamapple', 'adam@apple.com', '123456789', 'Adam', 'Apple', 'bahay ni adam', '09123456789'),
+(2, 'brandonbanana', 'brandon@banana.com', '123456789', 'Brandon', 'Banana', 'bahay ni brandon', '09123456789');
+
+--
+-- Triggers `profiles`
+--
+DELIMITER $$
+CREATE TRIGGER `LogStudentChanges` AFTER INSERT ON `profiles` FOR EACH ROW BEGIN
+	INSERT INTO log_table(action, timestamp)
+    VALUES ('insert', NOW());
+END
+$$
+DELIMITER ;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `log_table`
+--
+ALTER TABLE `log_table`
+  ADD PRIMARY KEY (`log_id`);
 
 --
 -- Indexes for table `products`
@@ -86,16 +130,22 @@ ALTER TABLE `profiles`
 --
 
 --
+-- AUTO_INCREMENT for table `log_table`
+--
+ALTER TABLE `log_table`
+  MODIFY `log_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `item_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
