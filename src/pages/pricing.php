@@ -95,7 +95,7 @@
   </div>
 
   <!-- PRICING -->
-  <div class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center ng-bg-black text-white gap-3" id="pricing-content">
+  <div class="container-fluid min-vh-100 py-5 d-flex flex-column justify-content-center align-items-center ng-bg-black text-white gap-3" id="pricing-content">
 
     <div class="row text-center">
       <h1 class="display-5 fw-bold">PRICING</h1>
@@ -133,7 +133,7 @@
         </div>
       </div>
 
-      <!--Basic-->
+      <!-- Standard -->
       <div class="col-md-4">
         <div class="py-3 bg-dark shadow d-flex flex-column justify-content-start align-items-center gap-3">
           <div>
@@ -166,8 +166,8 @@
         </div>
       </div>
 
-      <!--Basic-->
-      <div class="col-md-4">
+      <!-- Premium -->
+      <div class="col-md-4 mb-5">
         <div class="py-3 bg-dark shadow d-flex flex-column justify-content-start align-items-center gap-3">
           <div>
             <h1 class="fw-bold ng-text-yellow mb-0 h2">Premium</h1>
