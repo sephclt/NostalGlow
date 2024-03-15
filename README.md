@@ -22,10 +22,13 @@ Copy the NostalGlow folder inside of the htdocs folder to the htdocs folder of y
 ![features](./assets/screenshots/2-features.png)
 ### Pricing
 ![pricing](./assets/screenshots/3-pricing.png)
+### Resources
+![resources](./assets/screenshots/4-resources.png)
 ### Sign Up
 ![signup](./assets/screenshots/6-signup.png)
 
 # Todo
 - [x] Sign In page
-- [ ] Resources Page
+- [x] Resources Page
+- [ ] Fix pricing page
 - [ ] Database log table
