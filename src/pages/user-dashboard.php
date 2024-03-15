@@ -51,6 +51,38 @@
 
   </div>
 
+  <!-- PHP Script -->
+  <?php
+  $password = $email = '';
+  $conn = mysqli_connect('db', 'root', '', 'my_online_store');
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+  }
+
+  $username = mysqli_real_escape_string($conn, $username);
+  $email = mysqli_real_escape_string($conn, $email);
+  $sql = "SELECT `password` FROM `profiles` WHERE `email` = '$email'";
+  $rs = mysqli_query($conn, $sql);
+
+  if (!$rs) {
+    die('Error: ' . mysqli_error($conn));
+  }
+
+  $row = mysqli_fetch_row($rs);
+
+  if ($row[0] == $password) {
+    $page_message = "Login Successful";
+    $button_text = "Go Back";
+    $button_link = "../index.html#main-content";
+  } else {
+    $page_message = "Invalid Password";
+    $button_text = "Try Again";
+    $button_link = "./account-login.html";
+  }
+  ?>
+
   <!-- Dashboard Content -->
   <div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center ng-bg-black text-white">
     <div class="row container-xl g-3">
