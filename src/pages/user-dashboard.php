@@ -74,7 +74,8 @@
   $row = mysqli_fetch_array($rs);
 
   if ($row[0] == $password) {
-    echo "Welcome " . $row[1];
+    $username = $row[1];
+    echo "Welcome " . $username;
   } else {
     echo "Invalid email or password";
   }
