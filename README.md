@@ -33,5 +33,5 @@ Copy the NostalGlow folder inside of the htdocs folder to the htdocs folder of y
 - [x] Fix pricing page
 - [x] career page
 - [x] Database log table
-- [ ] user dashboard
+- [x] user dashboard
 - [ ] admin dashboard
