@@ -17,15 +17,15 @@
     <div class="row ng-bg-black ng-border-bottom">
       <div class="col px-5 py-3">
         <h5 class="ng-text-red fw-bold">01</h5>
-        <a href="#main-content" class="h3 text-white fw-bold home-nav" id="home-nav">Home</a>
+        <a href="../index/#main-content" class="h3 text-white fw-bold home-nav" id="home-nav">Home</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-yellow fw-bold">02</h5>
-        <a href="#about-content" class="h3 text-white fw-bold about-nav" id="about-nav">About</a>
+        <a href="../index/#about-content" class="h3 text-white fw-bold about-nav" id="about-nav">About</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-green fw-bold">03</h5>
-        <a href="#features-content" class="h3 text-white fw-bold features-nav" id="features-nav">Features</a>
+        <a href="../index/#features-content" class="h3 text-white fw-bold features-nav" id="features-nav">Features</a>
       </div>
     </div>
 
@@ -41,11 +41,11 @@
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-purple fw-bold">05</h5>
-        <a href="#resources-content" class="h3 text-white fw-bold resources-nav" id="resources-nav">Resources</a>
+        <a href="../index/#resources-content" class="h3 text-white fw-bold resources-nav" id="resources-nav">Resources</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-orange fw-bold">06</h5>
-        <a href="#main-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
+        <a href="../index/#main-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
       </div>
     </div>
 
@@ -54,6 +54,7 @@
   <!-- PHP Script -->
   <?php
   $password = $email = '';
+  $username = $subscription = '';
   $conn = mysqli_connect('db', 'root', '', 'my_online_store');
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -63,23 +64,19 @@
 
   $username = mysqli_real_escape_string($conn, $username);
   $email = mysqli_real_escape_string($conn, $email);
-  $sql = "SELECT `password` FROM `profiles` WHERE `email` = '$email'";
+  $sql = "SELECT `password`, `username` FROM `profiles` WHERE `email` = '$email'";
   $rs = mysqli_query($conn, $sql);
 
   if (!$rs) {
     die('Error: ' . mysqli_error($conn));
   }
 
-  $row = mysqli_fetch_row($rs);
+  $row = mysqli_fetch_array($rs);
 
   if ($row[0] == $password) {
-    $page_message = "Login Successful";
-    $button_text = "Go Back";
-    $button_link = "../index.html#main-content";
+    echo "Welcome " . $row[1];
   } else {
-    $page_message = "Invalid Password";
-    $button_text = "Try Again";
-    $button_link = "./account-login.html";
+    echo "Invalid email or password";
   }
   ?>
 
@@ -91,7 +88,7 @@
       <div class="col-12">
         <div class="bg-dark shadow p-3">
           <div class="row text-start">
-            <h1 class="col-6 h3 fw-bold mb-0">Username</h1>
+            <h1 class="col-6 h3 fw-bold mb-0"><?php echo $username ?></h1>
             <a href="#" class="col-6 h5 text-end mb-0">Log out</a>
           </div>
           <div class="row text-start">
