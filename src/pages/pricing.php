@@ -60,15 +60,15 @@
     <div class="row ng-bg-black ng-border-bottom">
       <div class="col px-5 py-3">
         <h5 class="ng-text-red fw-bold">01</h5>
-        <a href="../index.html#main-content" class="h3 text-white fw-bold home-nav" id="home-nav">Home</a>
+        <a href="../index.php#main-content" class="h3 text-white fw-bold home-nav" id="home-nav">Home</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-yellow fw-bold">02</h5>
-        <a href="../index.html#about-content" class="h3 text-white fw-bold about-nav" id="about-nav">About</a>
+        <a href="../index.php#about-content" class="h3 text-white fw-bold about-nav" id="about-nav">About</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-green fw-bold">03</h5>
-        <a href="../index.html#features-content" class="h3 text-white fw-bold features-nav" id="features-nav">Features</a>
+        <a href="../index.php#features-content" class="h3 text-white fw-bold features-nav" id="features-nav">Features</a>
       </div>
     </div>
 
@@ -80,15 +80,15 @@
     <div class="row ng-bg-black ng-border-top">
       <div class="col px-5 py-3">
         <h5 class="ng-text-blue fw-bold">04</h5>
-        <a href="../index.html#main-content" class="h3 text-white fw-bold pricing-nav clicked" id="pricing-nav">Pricing</a>
+        <a href="#" class="h3 text-white fw-bold pricing-nav clicked" id="pricing-nav">Pricing</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-purple fw-bold">05</h5>
-        <a href="../index.html#resources-content" class="h3 text-white fw-bold resources-nav" id="resources-nav">Resources</a>
+        <a href="../index.php#resources-content" class="h3 text-white fw-bold resources-nav" id="resources-nav">Resources</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-orange fw-bold">06</h5>
-        <a href="../index.html#main-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
+        <a href="../index.php#main-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
       </div>
     </div>
 

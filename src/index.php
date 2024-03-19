@@ -1,3 +1,7 @@
+<?php
+  session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +18,16 @@
 </head>
 
 <body>
+<?php
+  $username = $_SESSION['username'];
+
+  $isloggedin = false;
+
+  if ($username != "") {
+    $isloggedin = true;
+  }
+
+?>
   <div class="container-fluid position-fixed top-0">
 
     <!--Top Navbar-->
@@ -65,9 +79,12 @@
       <div class="col d-flex flex-column justify-content-center align-items-center text-center">
         <h1 class="display-1 fw-bold">NOSTAL<span class="display-1 fw-bold ng-text-green">GLOW</span></h1>
         <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
-        <div class="d-flex gap-3">
+        <div class="d-flex gap-3 <?php echo $isloggedin ? 'invisible' : 'visible' ?>">
           <button class="ng-btn fw-bold" onclick="window.location.href='./pages/account-login.html'">Log In</button>
           <button class="ng-btn fw-bold" onclick="window.location.href='./pages/account-signup.html'">Sign up</button>
+        </div>
+        <div class="d-flex gap-3 <?php echo $isloggedin ? 'visible' : 'invisible' ?>">
+        <button class="ng-btn fw-bold" onclick="window.location.href='./pages/user-dashboard.php'">Dashboard</button>
         </div>
       </div>
 
