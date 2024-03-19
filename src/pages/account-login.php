@@ -8,8 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = $_POST["email"];
 }
 
+$sub_id = 0;
+$sub = "";
+
 $email = mysqli_real_escape_string($conn, $email);
-$sql = "SELECT `password`, `username` FROM `profiles` WHERE `email` = '$email'";
+$sql = "SELECT `password`, `username`, `subscription` FROM `profiles` WHERE `email` = '$email'";
 $rs = mysqli_query($conn, $sql);
 
 if (!$rs) {
@@ -18,8 +21,22 @@ if (!$rs) {
 
 $row = mysqli_fetch_row($rs);
 
+mysqli_free_result($rs);
+
+if ($row[2] != NULL) {
+  $sub_id = $row[2];
+  $sql = "SELECT `item_name` FROM `products` WHERE `subscription` = '$sub_id'";
+  $rs = mysqli_query($conn, $sql);
+  $sub = mysqli_fetch_row($rs);
+}
+
+if ($sub_id == 0) {
+  $sub = "No Subscription";
+}
+
 if ($row[0] == $password) {
   $_SESSION['username'] = $row[1];
+  $_SESSION['subscription'] = $sub;
   header("Location: user-dashboard.php");
   exit();
 } else {
