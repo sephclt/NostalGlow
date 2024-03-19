@@ -76,7 +76,7 @@ session_start();
         <div class="bg-dark shadow p-3">
           <div class="row text-start">
             <h1 class="col-6 h3 fw-bold mb-0"><?php echo $username ?></h1>
-            <button class="col-6 btn btn-primary" onclick="<?php echo log_out() ?>">Log out</button>
+            <button class="col-6 btn btn-primary" onclick="call_log_out()">Log out</button>
           </div> <div class="row text-start mt-3"> <h5 class="fw-bold mb-0">Subscription: <span class="fw-bold ng-text-yellow mb-0">Premium</span> </h5>
           </div>
         </div>
@@ -100,11 +100,11 @@ session_start();
 
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        alert(this.responseText);
+        window.Location.href = "./account-login.html";
       }
     };
 
-    xhttp.open("GET", "./clear-session.php", true);
+    xhttp.open("GET", "./account-logout.php", true);
     xhttp.send();
   }
 </script>
