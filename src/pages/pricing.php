@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+$action;
+
+if (!isset($_SESSION['username'])) {
+  $action = "goToLogin()";
+} else {
+  $action = "goToDashboard()";
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -129,7 +140,7 @@
               <p class="ng-text-gray">ENCRYPTION</p>
             </div>
           </div>
-          <button class="ng-btn fw-bold">SELECT</button>
+          <button class="ng-btn fw-bold" onclick="<?php echo $action ?>">SELECT</button>
         </div>
       </div>
 
@@ -162,7 +173,7 @@
               <p class="ng-text-gray">APP INTEGRATION</p>
             </div>
           </div>
-          <button class="ng-btn-red fw-bold">SELECT</button>
+          <button class="ng-btn-red fw-bold" onclick="<?php echo $action ?>">SELECT</button>
         </div>
       </div>
 
@@ -199,13 +210,23 @@
               <p class="ng-text-gray">ACCESS TO NEW FEATURES</p>
             </div>
           </div>
-          <button class="ng-btn-yellow fw-bold">SELECT</button>
+          <button class="ng-btn-yellow fw-bold" onclick="<?php echo $action ?>">SELECT</button>
         </div>
       </div>
 
     </div>
 
   </div>
+
+  <script>
+    function goToLogin() {
+      window.location.href = "./account-login.html";
+    }
+
+    function goToDashboard() {
+      window.location.href = "./user-dashboard.php";
+    }
+  </script>
 </body>
 
 </html>
