@@ -17,14 +17,6 @@ session_start();
   <!-- PHP Script -->
   <?php
   $username = $_SESSION['username'];
-
-  function log_out()
-  {
-    session_unset();
-    session_destroy();
-    header("Location: ./account-login.html");
-    exit();
-  }
   ?>
 
   <div class="container-fluid position-fixed top-0">
