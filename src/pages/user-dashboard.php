@@ -17,6 +17,7 @@ session_start();
   <!-- PHP Script -->
   <?php
   $username = $_SESSION['username'];
+  $subscription = $_SESSION['subscription'];
   ?>
 
   <div class="container-fluid position-fixed top-0">
@@ -69,7 +70,9 @@ session_start();
           <div class="row text-start">
             <h1 class="col-6 h3 fw-bold mb-0"><?php echo $username ?></h1>
             <button class="col-6 btn btn-primary" onclick="call_log_out()">Log out</button>
-          </div> <div class="row text-start mt-3"> <h5 class="fw-bold mb-0">Subscription: <span class="fw-bold ng-text-yellow mb-0">Premium</span> </h5>
+          </div>
+          <div class="row text-start mt-3">
+            <h5 class="fw-bold mb-0">Subscription: <span class="fw-bold ng-text-yellow mb-0"><?php echo $subscription ?></span> </h5>
           </div>
         </div>
       </div>
@@ -86,20 +89,20 @@ session_start();
       </div>
     </div>
 
-<script>
-  function call_log_out() {
-    var xhttp = new XMLHttpRequest();
+    <script>
+      function call_log_out() {
+        var xhttp = new XMLHttpRequest();
 
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        window.Location.href = "./account-login.html";
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            window.Location.href = "./account-login.html";
+          }
+        };
+
+        xhttp.open("GET", "./account-logout.php", true);
+        xhttp.send();
       }
-    };
-
-    xhttp.open("GET", "./account-logout.php", true);
-    xhttp.send();
-  }
-</script>
+    </script>
 </body>
 
 </html>
