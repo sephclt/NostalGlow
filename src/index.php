@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -10,15 +10,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="style.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<?php
+  <?php
   $username = $_SESSION['username'];
 
   $isloggedin = false;
@@ -27,7 +24,7 @@
     $isloggedin = true;
   }
 
-?>
+  ?>
   <div class="container-fluid position-fixed top-0">
 
     <!--Top Navbar-->
@@ -62,15 +59,14 @@
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-orange fw-bold">06</h5>
-        <a href="#main-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
+        <a href="#career-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
       </div>
     </div>
 
   </div>
 
   <!--Main Content-->
-  <div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center ng-bg-black text-white"
-    id="main-content">
+  <div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center ng-bg-black text-white" id="main-content">
 
     <!-- Landing -->
     <div class="row">
@@ -84,7 +80,7 @@
           <button class="ng-btn fw-bold" onclick="window.location.href='./pages/account-signup.html'">Sign up</button>
         </div>
         <div class="d-flex gap-3 <?php echo $isloggedin ? 'visible' : 'invisible' ?>">
-        <button class="ng-btn fw-bold" onclick="window.location.href='./pages/user-dashboard.php'">Dashboard</button>
+          <button class="ng-btn fw-bold" onclick="window.location.href='./pages/user-dashboard.php'">Dashboard</button>
         </div>
       </div>
 
@@ -93,8 +89,7 @@
   </div>
 
   <!-- ABOUT -->
-  <div class="container-fluid vh-100 d-flex justify-content-center align-items-center ng-bg-black text-white"
-    id="about-content">
+  <div class="container-fluid vh-100 d-flex justify-content-center align-items-center ng-bg-black text-white" id="about-content">
 
     <!-- Landing -->
     <div class="row container-xl px-5">
@@ -131,9 +126,7 @@
   </div>
 
   <!-- FEATURES -->
-  <div
-    class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center ng-bg-black text-white gap-5"
-    id="features-content">
+  <div class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center ng-bg-black text-white gap-5" id="features-content">
 
     <div class="row container-xl px-5 text-center text-md-start">
       <h1 class="display-3 fw-bold">FEATURES</h1>
@@ -181,9 +174,7 @@
   </div>
 
   <!-- RESOURCES -->
-  <div
-    class="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center ng-bg-black text-white"
-    id="resources-content">
+  <div class="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center ng-bg-black text-white" id="resources-content">
 
     <div class="row container-xl">
 
@@ -194,39 +185,31 @@
           <form class="d-flex flex-column gap-3 needs-validation" method="post" action="" novalidate>
             <div class="text-start mb-0">
               <label for="email" class="form-label fw-bold">Email</label>
-              <input class="form-control bg-transparent text-white rounded-0 w-50" type="email" name="email"
-                placeholder="Email" required>
+              <input class="form-control bg-transparent text-white rounded-0 w-50" type="email" name="email" placeholder="Email" required>
             </div>
             <div class="text-start mb-0">
               <label for="message" class="form-label fw-bold">Message</label>
-              <textarea class="form-control bg-transparent text-white rounded-0 w-100" rows="8" cols="10"
-                placeholder="Message" required></textarea>
+              <textarea class="form-control bg-transparent text-white rounded-0 w-100" rows="8" cols="10" placeholder="Message" required></textarea>
             </div>
             <div class="d-flex gap-4">
               <button class="ng-btn w-25 fw-bold" type="submit">Submit</button>
               <div class="py-2 d-flex justify-content-center">
-                <a href="#"><img src="./assets/icons/socials/github_733553.png" alt="github" width="32px"
-                    height="32px"></a>
+                <a href="#"><img src="./assets/icons/socials/github_733553.png" alt="github" width="32px" height="32px"></a>
               </div>
               <div class="py-2 d-flex justify-content-center">
-                <a href="#"><img src="./assets/icons/socials/reddit_2111589.png" alt="reddit" width="32px"
-                    height="32px"></a>
+                <a href="#"><img src="./assets/icons/socials/reddit_2111589.png" alt="reddit" width="32px" height="32px"></a>
               </div>
               <div class="py-2 d-flex justify-content-center">
-                <a href="#"><img src="./assets/icons/socials/twitter_889147.png" alt="twitter" width="32px"
-                    height="32px"></a>
+                <a href="#"><img src="./assets/icons/socials/twitter_889147.png" alt="twitter" width="32px" height="32px"></a>
               </div>
               <div class="py-2 d-flex justify-content-center">
-                <a href="#"><img src="./assets/icons/socials/youtube_2111748.png" alt="youtube" width="32px"
-                    height="32px"></a>
+                <a href="#"><img src="./assets/icons/socials/youtube_2111748.png" alt="youtube" width="32px" height="32px"></a>
               </div>
               <div class="py-2 d-flex justify-content-center">
-                <a href="#"><img src="./assets/icons/socials/facebook_2111398.png" alt="facebook" width="32px"
-                    height="32px"></a>
+                <a href="#"><img src="./assets/icons/socials/facebook_2111398.png" alt="facebook" width="32px" height="32px"></a>
               </div>
               <div class="py-2 d-flex justify-content-center">
-                <a href="#"><img src="./assets/icons/socials/instagram_2111463.png" alt="instagram" width="32px"
-                    height="32px"></a>
+                <a href="#"><img src="./assets/icons/socials/instagram_2111463.png" alt="instagram" width="32px" height="32px"></a>
               </div>
             </div>
           </form>
@@ -237,9 +220,8 @@
 
   </div>
 
-  <!-- ABOUT -->
-  <div class="container-fluid vh-100 d-flex justify-content-center align-items-center ng-bg-black text-white"
-    id="career-content">
+  <!-- CAREER -->
+  <div class="container-fluid vh-100 d-flex justify-content-center align-items-center ng-bg-black text-white" id="career-content">
 
     <!-- Landing -->
     <div class="row container-xl px-5">
@@ -265,7 +247,7 @@
     let prevButton = document.getElementById('home-nav');
 
     for (let i = 0; i < nav_buttons.length; i++) {
-      document.getElementById(nav_buttons[i]).addEventListener('click', function () {
+      document.getElementById(nav_buttons[i]).addEventListener('click', function() {
         if (prevButton) {
           prevButton.classList.remove('clicked');
         }
@@ -278,8 +260,8 @@
 
     const forms = document.querySelectorAll('.needs-validation');
 
-    Array.prototype.slice.call(forms).forEach(function (form) {
-      form.addEventListener('submit', function (event) {
+    Array.prototype.slice.call(forms).forEach(function(form) {
+      form.addEventListener('submit', function(event) {
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
