@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Mar 20, 2024 at 03:49 AM
+-- Generation Time: Mar 20, 2024 at 08:19 AM
 -- Server version: 8.3.0
 -- PHP Version: 8.2.8
 
@@ -89,8 +89,8 @@ CREATE TABLE `profiles` (
 --
 
 INSERT INTO `profiles` (`user_id`, `username`, `email`, `password`, `first_name`, `last_name`, `address`, `contact`, `subscription`) VALUES
-(1, 'adamapple', 'adam@apple.com', '123456789', 'Adam', 'Apple', 'bahay ni adam', '09123456789', NULL),
-(2, 'brandonbanana', 'brandon@banana.com', '123456789', 'Brandon', 'Banana', 'bahay ni brandon', '09123456789', NULL);
+(1, 'adamapple', 'adam@apple.com', '123456789', 'Adam', 'Apple', 'bahay ni adam', '09123456789', 5),
+(2, 'brandonbanana', 'brandon@banana.com', '123456789', 'Brandon', 'Banana', 'bahay ni brandon', '09123456789', 7);
 
 --
 -- Triggers `profiles`
@@ -102,6 +102,27 @@ CREATE TRIGGER `LogStudentChanges` AFTER INSERT ON `profiles` FOR EACH ROW BEGIN
 END
 $$
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_memories`
+--
+
+CREATE TABLE `user_memories` (
+  `memory_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `memory_link` varchar(100) NOT NULL,
+  `memory_name` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `user_memories`
+--
+
+INSERT INTO `user_memories` (`memory_id`, `user_id`, `memory_link`, `memory_name`) VALUES
+(1, 1, 'https://www.youtube.com/watch?v=RGeWKnr9hZY', 'favorite memory'),
+(3, 1, 'https://www.youtube.com/watch?v=q9zKYh8sY_E', 'singing guy');
 
 --
 -- Indexes for dumped tables
@@ -127,6 +148,12 @@ ALTER TABLE `profiles`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `user_memories`
+--
+ALTER TABLE `user_memories`
+  ADD PRIMARY KEY (`memory_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -147,6 +174,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `profiles`
   MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `user_memories`
+--
+ALTER TABLE `user_memories`
+  MODIFY `memory_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
