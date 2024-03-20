@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Mar 15, 2024 at 08:20 AM
+-- Generation Time: Mar 20, 2024 at 03:49 AM
 -- Server version: 8.3.0
 -- PHP Version: 8.2.8
 
@@ -48,13 +48,13 @@ INSERT INTO `log_table` (`log_id`, `action`, `timestamp`) VALUES
 
 CREATE TABLE `products` (
   `item_id` int NOT NULL,
-  `item_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `item_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `price` decimal(10,1) DEFAULT NULL,
   `capsule` int DEFAULT NULL,
-  `themes` enum('Basic','Advanced','Extended') COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `encryption` enum('Server End','End-to-End') COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `integration` enum('Basic','Advanced','Extended') COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `newFeatures` enum('Priority') COLLATE utf8mb4_general_ci DEFAULT NULL
+  `themes` enum('Basic','Advanced','Extended') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `encryption` enum('Server End','End-to-End') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `integration` enum('Basic','Advanced','Extended') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `newFeatures` enum('Priority') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -74,22 +74,23 @@ INSERT INTO `products` (`item_id`, `item_name`, `price`, `capsule`, `themes`, `e
 
 CREATE TABLE `profiles` (
   `user_id` int NOT NULL,
-  `username` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `first_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `last_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `address` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `contact` varchar(12) COLLATE utf8mb4_general_ci NOT NULL
+  `username` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `first_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `last_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `contact` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `subscription` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `profiles`
 --
 
-INSERT INTO `profiles` (`user_id`, `username`, `email`, `password`, `first_name`, `last_name`, `address`, `contact`) VALUES
-(1, 'adamapple', 'adam@apple.com', '123456789', 'Adam', 'Apple', 'bahay ni adam', '09123456789'),
-(2, 'brandonbanana', 'brandon@banana.com', '123456789', 'Brandon', 'Banana', 'bahay ni brandon', '09123456789');
+INSERT INTO `profiles` (`user_id`, `username`, `email`, `password`, `first_name`, `last_name`, `address`, `contact`, `subscription`) VALUES
+(1, 'adamapple', 'adam@apple.com', '123456789', 'Adam', 'Apple', 'bahay ni adam', '09123456789', NULL),
+(2, 'brandonbanana', 'brandon@banana.com', '123456789', 'Brandon', 'Banana', 'bahay ni brandon', '09123456789', NULL);
 
 --
 -- Triggers `profiles`
