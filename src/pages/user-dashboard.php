@@ -20,6 +20,10 @@ session_start();
   $subscription = $_SESSION['subscription'];
   $sub_id = $_SESSION['sub_id'];
 
+  if ($subscription == 0) {
+    $subscription = "No Subscription";
+  }
+
   function subscribe($sub_id, $username)
   {
     $conn = mysqli_connect('db', 'root', '', 'my_online_store');
@@ -77,11 +81,15 @@ session_start();
         <div class="bg-dark shadow p-3">
           <div class="row text-start">
             <h1 class="col-6 h3 fw-bold mb-0"><?php echo $username ?></h1>
-            <button class="col-6 btn btn-primary" onclick="window.location.href='./account-logout.php'">Log out</button>
+            <div class="col-6 text-end">
+              <button class="ng-btn" onclick="window.location.href='./account-logout.php'">Log out</button>
+            </div>
           </div>
           <div class="row text-start mt-3">
-            <h5 class="fw-bold mb-0">Subscription: <span class="fw-bold ng-text-yellow mb-0"><?php echo $subscription ?></span> </h5>
-            <button class="col-6 btn btn-primary" onclick="window.location.href='./account-logout.php'">Unsubscribe</button>
+            <h5 class="col-6 fw-bold mb-0">Subscription: <span class="fw-bold ng-text-yellow mb-0"><?php echo $subscription ?></span> </h5>
+            <div class="col-6 text-end">
+              <button class="ng-btn-red" onclick="window.location.href='./unsubscribe.php'">Unsubscribe</button>
+            </div>
           </div>
         </div>
       </div>
