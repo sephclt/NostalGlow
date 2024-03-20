@@ -81,6 +81,7 @@ session_start();
           </div>
           <div class="row text-start mt-3">
             <h5 class="fw-bold mb-0">Subscription: <span class="fw-bold ng-text-yellow mb-0"><?php echo $subscription ?></span> </h5>
+            <button class="col-6 btn btn-primary" onclick="window.location.href='./account-logout.php'">Unsubscribe</button>
           </div>
         </div>
       </div>
@@ -93,13 +94,13 @@ session_start();
           <div class="row text-start">
             <h1 class="col h3 fw-bold mb-0">Plans:</h1>
             <div class="col text-center">
-              <button class="col fw-bold mb-0 ng-btn">Basic</button>
+              <button class="col fw-bold mb-0 ng-btn" onclick="window.location.href=`subscribe-basic.php`">Basic</button>
             </div>
             <div class="col text-center">
-              <button class="col fw-bold mb-0 ng-btn-red">Standard</button>
+              <button class="col fw-bold mb-0 ng-btn-red" onclick="window.location.href=`subscribe-standard.php`">Standard</button>
             </div>
             <div class="col text-center">
-              <button class="col fw-bold mb-0 ng-btn-yellow">Premium</button>
+              <button class="col fw-bold mb-0 ng-btn-yellow" onclick="window.location.href=`subscribe-premium.php`">Premium</button>
             </div>
           </div>
           <div class="row text-start">
