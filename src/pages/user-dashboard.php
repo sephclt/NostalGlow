@@ -69,7 +69,7 @@ session_start();
         <div class="bg-dark shadow p-3">
           <div class="row text-start">
             <h1 class="col-6 h3 fw-bold mb-0"><?php echo $username ?></h1>
-            <button class="col-6 btn btn-primary" onclick="call_log_out()">Log out</button>
+            <button class="col-6 btn btn-primary" onclick="window.location.href='./account-logout.php'">Log out</button>
           </div>
           <div class="row text-start mt-3">
             <h5 class="fw-bold mb-0">Subscription: <span class="fw-bold ng-text-yellow mb-0"><?php echo $subscription ?></span> </h5>
@@ -77,7 +77,25 @@ session_start();
         </div>
       </div>
 
-      <!-- Second Row -->
+      <?php
+      if ($subscription == "No Subscription") {
+        echo
+        '<div class="col-12">
+        <div class="bg-dark shadow p-3">
+          <div class="row text-start">
+            <h1 class="col h3 fw-bold mb-0">Plans:</h1>
+            <button class="col fw-bold mb-0 ng-text-red">Basic</button>
+            <h3 class="col fw-bold mb-0 ng-text-red">Standard</h3>
+            <h3 class="col fw-bold mb-0 ng-text-yellow">Premium</h3>
+          </div>
+          <div class="row text-start">
+          </div>
+        </div>
+      </div>';
+      }
+      ?>
+
+      <!-- Third Row -->
       <div class="col-12">
         <div class="bg-dark shadow p-3">
           <div class="row text-start">
