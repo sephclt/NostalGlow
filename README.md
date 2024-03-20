@@ -11,9 +11,9 @@ Ensure docker and docker-compose are installed then inside this directory run:
 docker-compose up --build
 ```
 ### Using XAMPP
-Go inside the htdocs folder of this repo, copy the NostalGlow folder from there to your xampp/htdocs.
+Copy the src directory to your xampp/htdocs folder
 ```powershell
-copy-item -path ".\htdocs\NostalGlow" -destination "C:\xampp\htdocs" -recursive
+copy-item -path ".\src" -destination "C:\xampp\htdocs" -recursive
 ```
 
 ## Screenshots
