@@ -23,13 +23,6 @@ session_start();
   if ($subscription == 0) {
     $subscription = "No Subscription";
   }
-
-  function subscribe($sub_id, $username)
-  {
-    $conn = mysqli_connect('db', 'root', '', 'my_online_store');
-    $sql = "UPDATE `profiles` SET `subscription` = '$sub_id' WHERE `username` = '$username'";
-    mysqli_query($conn, $sql);
-  }
   ?>
 
   <div class="container-fluid position-fixed top-0">
