@@ -142,9 +142,33 @@ session_start();
           <div class="row text-start mt-3">
             <?php
             foreach ($memories as $memory) {
-              echo '<div class="col-sm-4 text-center"><a class="ng-btn text-decoration-none" href="' . $memory['memory_link'] . '" target="_blank">' . $memory['memory_name'] . '</a></div>';
+              echo '<div class="col-sm-4 text-center"><a class="ng-btn-yellow text-decoration-none" href="' . $memory['memory_link'] . '" target="_blank">' . $memory['memory_name'] . '</a></div>';
             }
             ?>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Row -->
+      <div class="col-12">
+        <div class="bg-dark shadow p-3">
+          <div class="row text-start">
+            <h1 class="col-sm-4 h3 fw-bold mb-0">Add Memory</h1>
+          </div>
+          <div class="row text-start mt-3">
+            <form class="d-flex gap-3 needs-validation" action="add-memory.php" method="post">
+              <div class="text-start mb-0">
+                <label for="email" class="form-label fw-bold">Link</label>
+                <input class="form-control bg-transparent text-white rounded-0" type="text" name="add_link" placeholder="Link" required>
+              </div>
+              <div class="text-start mb-0">
+                <label for="email" class="form-label fw-bold">Title</label>
+                <input class="form-control bg-transparent text-white rounded-0" type="text" name="add_name" placeholder="Title" required>
+              </div>
+              <div class="d-flex gap-4">
+                <button class="ng-btn w-10 fw-bold" type="submit">+ Add Memory</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
