@@ -105,7 +105,7 @@ if ($row[0] == $password) {
 
     <div class="row text-center">
       <h1 class="display-5 fw-bold"><?php echo $page_message; ?></h1>
-      <button class="btn btn-primary" onclick="window.location.href='<?php echo $button_link ?>'"><?php echo $button_text ?></button>
+      <button class="ng-btn" onclick="window.location.href='<?php echo $button_link ?>'"><?php echo $button_text ?></button>
     </div>
 
   </div>
