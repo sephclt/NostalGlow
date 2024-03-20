@@ -74,7 +74,7 @@ session_start();
       <!-- Text -->
       <div class="col d-flex flex-column justify-content-center align-items-center text-center">
         <h1 class="display-1 fw-bold">NOSTAL<span class="display-1 fw-bold ng-text-green">GLOW</span></h1>
-        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+        <p>Store your memories digitally in a safe and secure capsule to keep for generations</p>
         <div class="d-flex gap-3 <?php echo $isloggedin ? 'invisible' : 'visible' ?>">
           <button class="ng-btn fw-bold" onclick="window.location.href='./pages/account-login.html'">Log In</button>
           <button class="ng-btn fw-bold" onclick="window.location.href='./pages/account-signup.html'">Sign up</button>
@@ -97,14 +97,8 @@ session_start();
       <!-- Text -->
       <div class="col d-flex flex-column justify-content-center align-items-start gap-3">
         <h1 class="h1 fw-bold">The Company Behind This</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis semper metus. Vivamus ut justo vel dolor
-          lacinia viverra. Etiam luctus volutpat commodo. Suspendisse varius congue laoreet. Integer tempus, massa et
-          fermentum condimentum, quam nunc maximus metus, nec eleifend dolor neque at dolor. Integer hendrerit fringilla
-          arcu, ac ultrices diam ultrices quis. Sed mattis suscipit diam, vel blandit lorem venenatis eget.</p>
-        <p>Vestibulum aliquet faucibus elit vel tristique. In malesuada velit ut arcu auctor, nec tempor metus pulvinar.
-          Duis enim velit, porttitor ut molestie vitae, ultricies non elit. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Proin sodales purus id quam consectetur, nec suscipit nulla pharetra. Vestibulum vehicula
-          maximus augue a vestibulum. Fusce quis diam ultricies leo aliquet accumsan porttitor sed ante</p>
+        <p>The NostalGlow Company are pioneers of a groundbreaking solution in the realm of memory preservation. Our company specializes in capturing and storing people's most cherished memories in a compact, secure, and durable device known as the GlowCapsules. We provide a way for individuals to relive their most precious moments in a clear way.</p>
+        <p>Our mission is to empower individuals to preserve their most precious memories, enriching lives and fostering meaningful connections across generations. We believe that memories defines who we are, and our innovative solutions aim to celebrate this treasures of ours.</p>
         <div class="d-flex gap-5">
           <div>
             <h3 class="ng-text-red">25<span class="text-white">yrs</span></h3>
@@ -229,10 +223,8 @@ session_start();
       <!-- Text -->
       <div class="col d-flex flex-column justify-content-center align-items-start gap-3">
         <h1 class="h1 fw-bold">We are hiring</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis semper metus. Vivamus ut justo vel dolor
-          lacinia viverra. Etiam luctus volutpat commodo. Suspendisse varius congue laoreet. Integer tempus, massa et
-          fermentum condimentum, quam nunc maximus metus, nec eleifend dolor neque at dolor. Integer hendrerit fringilla
-          arcu, ac ultrices diam ultrices quis. Sed mattis suscipit diam, vel blandit lorem venenatis eget.</p>
+        <p>The NostalGlow Company continues to innovate and we are on a mission to push the boundaries of neuortechnology and memory preservation. We are seeking passionate and like minded individuals who are eager to make a meaningful impact on the world.</p>
+        <p>Explore our current opportunities and join us on a mission to unlock the power of technology. Together we will shape the future of memory preservation and create a legacy that lasts a lifetime.</p>
         <p>Send us your resume: <span class="fw-bold ng-text-green">real.company@fmail.com</span></p>
       </div>
 
