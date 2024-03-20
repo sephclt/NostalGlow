@@ -4,7 +4,7 @@ session_start();
 $sender_email = $_POST['sender_email'];
 $sender_message = $_POST['sender_message'];
 
-$conn = mysqli_connect("localhost", "root", "", "my_online_store");
+$conn = mysqli_connect("db", "root", "", "my_online_store");
 $sql = "INSERT INTO `messages` (`sender_email`, `sender_message`) VALUES ('$sender_email', '$sender_message')";
 $result = mysqli_query($conn, $sql);
 

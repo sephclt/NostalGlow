@@ -25,7 +25,7 @@ session_start();
     $subscription = "No Subscription";
   }
 
-  $conn = mysqli_connect("localhost", "root", "", "my_online_store");
+  $conn = mysqli_connect("db", "root", "", "my_online_store");
   $sql_memories = "SELECT `memory_link`, `memory_name` FROM `user_memories` WHERE `user_id` = '$user_id'";
   $rs_memories = mysqli_query($conn, $sql_memories);
 
@@ -142,7 +142,7 @@ session_start();
           <div class="row text-start mt-3">
             <?php
             foreach ($memories as $memory) {
-              echo '<div class="col-sm-4 text-center"><a class="ng-btn-yellow text-decoration-none" href="' . $memory['memory_link'] . '" target="_blank">' . $memory['memory_name'] . '</a></div>';
+              echo '<div class="col text-center"><a class="ng-btn-yellow text-decoration-none" href="' . $memory['memory_link'] . '" target="_blank">' . $memory['memory_name'] . '</a></div>';
             }
             ?>
           </div>

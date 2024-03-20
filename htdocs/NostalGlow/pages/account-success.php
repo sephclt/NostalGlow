@@ -15,7 +15,7 @@
   <!-- PHP Script -->
   <?php
   $username = $password = $firstName = $lastName = $contact = $address = $email = '';
-  $conn = mysqli_connect('localhost', 'root', '', 'my_online_store');
+  $conn = mysqli_connect('db', 'root', '', 'my_online_store');
 
   function checkExistingUser($conn, $username, $email)
   {
@@ -56,7 +56,7 @@
     echo "Account Created";
     $page_message = "Account Created";
     $button_text = "Go Back";
-    $button_link = "../index.html#main-content";
+    $button_link = "../index.php#main-content";
 
     $sql = "INSERT INTO `profiles` (`username`, `email`, `password`, `first_name`, `last_name`, `address`, `contact`) VALUES ('$username', '$email', '$password', '$firstName', '$lastName', '$address', '$contact')";
     $rs = mysqli_query($conn, $sql);
