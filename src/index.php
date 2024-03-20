@@ -176,14 +176,14 @@ session_start();
       <div class="col px-5 d-flex flex-column">
         <div class="bg-dark p-5 shadow p-3">
           <h1 class="fw-bold">Contact Us</h1>
-          <form class="d-flex flex-column gap-3 needs-validation" method="post" action="" novalidate>
+          <form class="d-flex flex-column gap-3 needs-validation" method="post" action="./pages/send-message.php" novalidate>
             <div class="text-start mb-0">
               <label for="email" class="form-label fw-bold">Email</label>
-              <input class="form-control bg-transparent text-white rounded-0 w-50" type="email" name="email" placeholder="Email" required>
+              <input class="form-control bg-transparent text-white rounded-0 w-50" type="email" name="sender_email" placeholder="Email" required>
             </div>
             <div class="text-start mb-0">
               <label for="message" class="form-label fw-bold">Message</label>
-              <textarea class="form-control bg-transparent text-white rounded-0 w-100" rows="8" cols="10" placeholder="Message" required></textarea>
+              <textarea class="form-control bg-transparent text-white rounded-0 w-100" rows="8" cols="10" name="sender_message" placeholder="Message" required></textarea>
             </div>
             <div class="d-flex gap-4">
               <button class="ng-btn w-25 fw-bold" type="submit">Submit</button>
