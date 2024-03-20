@@ -142,7 +142,7 @@ session_start();
           <div class="row text-start mt-3">
             <?php
             foreach ($memories as $memory) {
-              echo '<div class="col-sm-4 text-center"><a class="ng-btn-yellow text-decoration-none" href="' . $memory['memory_link'] . '" target="_blank">' . $memory['memory_name'] . '</a></div>';
+              echo '<div class="col text-center"><a class="ng-btn-yellow text-decoration-none" href="' . $memory['memory_link'] . '" target="_blank">' . $memory['memory_name'] . '</a></div>';
             }
             ?>
           </div>
