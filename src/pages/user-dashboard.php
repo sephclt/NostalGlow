@@ -18,6 +18,14 @@ session_start();
   <?php
   $username = $_SESSION['username'];
   $subscription = $_SESSION['subscription'];
+  $sub_id = $_SESSION['sub_id'];
+
+  function subscribe($sub_id, $username)
+  {
+    $conn = mysqli_connect('db', 'root', '', 'my_online_store');
+    $sql = "UPDATE `profiles` SET `subscription` = '$sub_id' WHERE `username` = '$username'";
+    mysqli_query($conn, $sql);
+  }
   ?>
 
   <div class="container-fluid position-fixed top-0">
@@ -84,9 +92,15 @@ session_start();
         <div class="bg-dark shadow p-3">
           <div class="row text-start">
             <h1 class="col h3 fw-bold mb-0">Plans:</h1>
-            <button class="col fw-bold mb-0 ng-text-red">Basic</button>
-            <h3 class="col fw-bold mb-0 ng-text-red">Standard</h3>
-            <h3 class="col fw-bold mb-0 ng-text-yellow">Premium</h3>
+            <div class="col text-center">
+              <button class="col fw-bold mb-0 ng-btn">Basic</button>
+            </div>
+            <div class="col text-center">
+              <button class="col fw-bold mb-0 ng-btn-red">Standard</button>
+            </div>
+            <div class="col text-center">
+              <button class="col fw-bold mb-0 ng-btn-yellow">Premium</button>
+            </div>
           </div>
           <div class="row text-start">
           </div>
