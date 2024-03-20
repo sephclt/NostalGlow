@@ -134,7 +134,7 @@ session_start();
       ?>
 
       <!-- Third Row -->
-      <div class="col-12">
+      <div class="col-12 <?php echo $subscription != "No Subscription" ? 'visible' : 'invisible' ?>">
         <div class="bg-dark shadow p-3">
           <div class="row text-start">
             <h1 class="col-sm-4 h3 fw-bold mb-0">Memories</h1>
@@ -150,7 +150,7 @@ session_start();
       </div>
 
       <!-- Fourth Row -->
-      <div class="col-12">
+      <div class="col-12 <?php echo $subscription != "No Subscription" ? 'visible' : 'invisible' ?>">
         <div class="bg-dark shadow p-3">
           <div class="row text-start">
             <h1 class="col-sm-4 h3 fw-bold mb-0">Add Memory</h1>
