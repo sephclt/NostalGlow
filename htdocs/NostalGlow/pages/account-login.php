@@ -1,7 +1,7 @@
 <?php
 session_start();
 $password = $email = '';
-$conn = mysqli_connect('db', 'root', '', 'my_online_store');
+$conn = mysqli_connect('localhost', 'root', '', 'my_online_store');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST["password"];
