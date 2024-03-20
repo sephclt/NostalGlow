@@ -87,9 +87,13 @@ session_start();
           </div>
           <div class="row text-start mt-3">
             <h5 class="col-6 fw-bold mb-0">Subscription: <span class="fw-bold ng-text-yellow mb-0"><?php echo $subscription ?></span> </h5>
-            <div class="col-6 text-end">
-              <button class="ng-btn-red" onclick="window.location.href='./unsubscribe.php'">Unsubscribe</button>
-            </div>
+            <?php
+            if ($subscription != "No Subscription") {
+              echo '<div class="col-6 text-end">
+              <button class="ng-btn-red" onclick="window.location.href=`./unsubscribe.php`">Unsubscribe</button>
+              </div>';
+            }
+            ?>
           </div>
         </div>
       </div>
