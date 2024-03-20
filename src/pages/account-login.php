@@ -31,7 +31,7 @@ if ($row[2] != NULL) {
 }
 
 if ($sub_id == 0) {
-  $sub = "No Subscription";
+  $sub[0] = 0;
 }
 
 if ($row[0] == $password) {
