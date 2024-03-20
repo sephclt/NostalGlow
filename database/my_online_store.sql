@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Mar 20, 2024 at 08:19 AM
+-- Generation Time: Mar 20, 2024 at 02:58 PM
 -- Server version: 8.3.0
 -- PHP Version: 8.2.8
 
@@ -38,7 +38,20 @@ CREATE TABLE `log_table` (
 --
 
 INSERT INTO `log_table` (`log_id`, `action`, `timestamp`) VALUES
-(1, 'insert', '2024-03-15 08:19:37');
+(1, 'insert', '2024-03-15 08:19:37'),
+(2, 'insert', '2024-03-20 14:03:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `message_id` int NOT NULL,
+  `sender_email` varchar(50) NOT NULL,
+  `sender_message` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -63,7 +76,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`item_id`, `item_name`, `price`, `capsule`, `themes`, `encryption`, `integration`, `newFeatures`) VALUES
 (5, 'Basic', 250.0, 1, 'Basic', 'Server End', NULL, NULL),
-(6, 'Standard', 400.0, 2, 'Advanced', 'Server End', 'Basic', NULL),
+(6, 'Standard', 500.0, 2, 'Advanced', 'Server End', 'Basic', NULL),
 (7, 'Premium', 800.0, 4, 'Extended', 'End-to-End', 'Extended', 'Priority');
 
 -- --------------------------------------------------------
@@ -90,7 +103,8 @@ CREATE TABLE `profiles` (
 
 INSERT INTO `profiles` (`user_id`, `username`, `email`, `password`, `first_name`, `last_name`, `address`, `contact`, `subscription`) VALUES
 (1, 'adamapple', 'adam@apple.com', '123456789', 'Adam', 'Apple', 'bahay ni adam', '09123456789', 5),
-(2, 'brandonbanana', 'brandon@banana.com', '123456789', 'Brandon', 'Banana', 'bahay ni brandon', '09123456789', 7);
+(2, 'brandonbanana', 'brandon@banana.com', '123456789', 'Brandon', 'Banana', 'bahay ni brandon', '09123456789', 7),
+(3, 'chestercoconut', 'chester@coconut.com', '123456789', 'Chester', 'Coconut', 'bahay ni coconut', '09123456789', 7);
 
 --
 -- Triggers `profiles`
@@ -122,7 +136,8 @@ CREATE TABLE `user_memories` (
 
 INSERT INTO `user_memories` (`memory_id`, `user_id`, `memory_link`, `memory_name`) VALUES
 (1, 1, 'https://www.youtube.com/watch?v=RGeWKnr9hZY', 'favorite memory'),
-(3, 1, 'https://www.youtube.com/watch?v=q9zKYh8sY_E', 'singing guy');
+(3, 1, 'https://www.youtube.com/watch?v=q9zKYh8sY_E', 'singing guy'),
+(4, 3, 'https://github.com/sephclt/NostalGlow', 'My Website');
 
 --
 -- Indexes for dumped tables
@@ -133,6 +148,12 @@ INSERT INTO `user_memories` (`memory_id`, `user_id`, `memory_link`, `memory_name
 --
 ALTER TABLE `log_table`
   ADD PRIMARY KEY (`log_id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`message_id`);
 
 --
 -- Indexes for table `products`
@@ -161,7 +182,13 @@ ALTER TABLE `user_memories`
 -- AUTO_INCREMENT for table `log_table`
 --
 ALTER TABLE `log_table`
-  MODIFY `log_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `log_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `message_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -173,13 +200,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_memories`
 --
 ALTER TABLE `user_memories`
-  MODIFY `memory_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `memory_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
