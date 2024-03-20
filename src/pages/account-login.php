@@ -12,7 +12,7 @@ $sub_id = 0;
 $sub = "";
 
 $email = mysqli_real_escape_string($conn, $email);
-$sql = "SELECT `password`, `username`, `subscription` FROM `profiles` WHERE `email` = '$email'";
+$sql = "SELECT `password`, `username`, `subscription`, `user_id` FROM `profiles` WHERE `email` = '$email'";
 $rs = mysqli_query($conn, $sql);
 
 if (!$rs) {
@@ -38,6 +38,7 @@ if ($row[0] == $password) {
   $_SESSION['username'] = $row[1];
   $_SESSION['subscription'] = $sub[0];
   $_SESSION['sub_id'] = $sub_id;
+  $_SESSION['user_id'] = $row[3];
   header("Location: user-dashboard.php");
   exit();
 } else {
