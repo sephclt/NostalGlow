@@ -15,7 +15,7 @@
   <!-- PHP Script -->
   <?php
   $username = $password = $firstName = $lastName = $contact = $address = $email = '';
-  $conn = mysqli_connect('db', 'root', '', 'my_online_store');
+  $conn = mysqli_connect('localhost', 'root', '', 'my_online_store');
 
   function checkExistingUser($conn, $username, $email)
   {
