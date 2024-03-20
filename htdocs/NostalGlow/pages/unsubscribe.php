@@ -2,7 +2,7 @@
 session_start();
 $username = $_SESSION['username'];
 
-$conn = mysqli_connect('localhost', 'root', '', 'my_online_store');
+$conn = mysqli_connect('db', 'root', '', 'my_online_store');
 $sql = "UPDATE `profiles` SET `subscription` = NULL WHERE `username` = '$username'";
 mysqli_query($conn, $sql);
 

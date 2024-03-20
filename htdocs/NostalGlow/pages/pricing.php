@@ -26,7 +26,7 @@ if (!isset($_SESSION['username'])) {
   $basic = array();
   $standard = array();
   $premium = array();
-  $conn = mysqli_connect('localhost', 'root', '', 'my_online_store');
+  $conn = mysqli_connect('db', 'root', '', 'my_online_store');
 
   $sql_basic = "SELECT price, capsule, themes, encryption, integration, newFeatures FROM `products` WHERE `item_name` = 'Basic'";
   $sql_standard = "SELECT price, capsule, themes, encryption, integration, newFeatures FROM `products` WHERE `item_name` = 'Standard'";
