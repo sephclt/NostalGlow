@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+$action;
+
+if (!isset($_SESSION['username'])) {
+  $action = "goToLogin()";
+} else {
+  $action = "goToDashboard()";
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -60,15 +71,15 @@
     <div class="row ng-bg-black ng-border-bottom">
       <div class="col px-5 py-3">
         <h5 class="ng-text-red fw-bold">01</h5>
-        <a href="../index.html#main-content" class="h3 text-white fw-bold home-nav" id="home-nav">Home</a>
+        <a href="../index.php#main-content" class="h3 text-white fw-bold home-nav" id="home-nav">Home</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-yellow fw-bold">02</h5>
-        <a href="../index.html#about-content" class="h3 text-white fw-bold about-nav" id="about-nav">About</a>
+        <a href="../index.php#about-content" class="h3 text-white fw-bold about-nav" id="about-nav">About</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-green fw-bold">03</h5>
-        <a href="../index.html#features-content" class="h3 text-white fw-bold features-nav" id="features-nav">Features</a>
+        <a href="../index.php#features-content" class="h3 text-white fw-bold features-nav" id="features-nav">Features</a>
       </div>
     </div>
 
@@ -80,22 +91,22 @@
     <div class="row ng-bg-black ng-border-top">
       <div class="col px-5 py-3">
         <h5 class="ng-text-blue fw-bold">04</h5>
-        <a href="../index.html#main-content" class="h3 text-white fw-bold pricing-nav clicked" id="pricing-nav">Pricing</a>
+        <a href="#" class="h3 text-white fw-bold pricing-nav clicked" id="pricing-nav">Pricing</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-purple fw-bold">05</h5>
-        <a href="../index.html#resources-content" class="h3 text-white fw-bold resources-nav" id="resources-nav">Resources</a>
+        <a href="../index.php#resources-content" class="h3 text-white fw-bold resources-nav" id="resources-nav">Resources</a>
       </div>
       <div class="col px-5 py-3">
         <h5 class="ng-text-orange fw-bold">06</h5>
-        <a href="../index.html#main-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
+        <a href="../index.php#main-content" class="h3 text-white fw-bold career-nav" id="career-nav">Career</a>
       </div>
     </div>
 
   </div>
 
   <!-- PRICING -->
-  <div class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center ng-bg-black text-white gap-3" id="pricing-content">
+  <div class="container-fluid min-vh-100 py-5 d-flex flex-column justify-content-center align-items-center ng-bg-black text-white gap-3" id="pricing-content">
 
     <div class="row text-center">
       <h1 class="display-5 fw-bold">PRICING</h1>
@@ -129,11 +140,11 @@
               <p class="ng-text-gray">ENCRYPTION</p>
             </div>
           </div>
-          <button class="ng-btn fw-bold">SELECT</button>
+          <button class="ng-btn fw-bold" onclick="<?php echo $action ?>">SELECT</button>
         </div>
       </div>
 
-      <!--Basic-->
+      <!-- Standard -->
       <div class="col-md-4">
         <div class="py-3 bg-dark shadow d-flex flex-column justify-content-start align-items-center gap-3">
           <div>
@@ -162,12 +173,12 @@
               <p class="ng-text-gray">APP INTEGRATION</p>
             </div>
           </div>
-          <button class="ng-btn-red fw-bold">SELECT</button>
+          <button class="ng-btn-red fw-bold" onclick="<?php echo $action ?>">SELECT</button>
         </div>
       </div>
 
-      <!--Basic-->
-      <div class="col-md-4">
+      <!-- Premium -->
+      <div class="col-md-4 mb-5">
         <div class="py-3 bg-dark shadow d-flex flex-column justify-content-start align-items-center gap-3">
           <div>
             <h1 class="fw-bold ng-text-yellow mb-0 h2">Premium</h1>
@@ -199,13 +210,23 @@
               <p class="ng-text-gray">ACCESS TO NEW FEATURES</p>
             </div>
           </div>
-          <button class="ng-btn-yellow fw-bold">SELECT</button>
+          <button class="ng-btn-yellow fw-bold" onclick="<?php echo $action ?>">SELECT</button>
         </div>
       </div>
 
     </div>
 
   </div>
+
+  <script>
+    function goToLogin() {
+      window.location.href = "./account-login.html";
+    }
+
+    function goToDashboard() {
+      window.location.href = "./user-dashboard.php";
+    }
+  </script>
 </body>
 
 </html>
