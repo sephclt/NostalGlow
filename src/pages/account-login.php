@@ -37,6 +37,7 @@ if ($sub_id == 0) {
 if ($row[0] == $password) {
   $_SESSION['username'] = $row[1];
   $_SESSION['subscription'] = $sub;
+  $_SESSION['sub_id'] = $sub_id;
   header("Location: user-dashboard.php");
   exit();
 } else {
