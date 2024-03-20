@@ -19,10 +19,28 @@ session_start();
   $username = $_SESSION['username'];
   $subscription = $_SESSION['subscription'];
   $sub_id = $_SESSION['sub_id'];
+  $user_id = $_SESSION['user_id'];
 
   if ($subscription == 0) {
     $subscription = "No Subscription";
   }
+
+  $conn = mysqli_connect("db", "root", "", "my_online_store");
+  $sql_memories = "SELECT `memory_link`, `memory_name` FROM `user_memories` WHERE `user_id` = '$user_id'";
+  $rs_memories = mysqli_query($conn, $sql_memories);
+
+  if (!$rs_memories) {
+    die('Error: ' . mysqli_error($conn));
+  }
+
+  $memories = array();
+
+  // loop through the results
+  while ($row = mysqli_fetch_assoc($rs_memories)) {
+    $memories[] = $row;
+  }
+
+  mysqli_free_result($rs_memories);
   ?>
 
   <div class="container-fluid position-fixed top-0">
@@ -121,7 +139,12 @@ session_start();
           <div class="row text-start">
             <h1 class="col-sm-4 h3 fw-bold mb-0">Memories</h1>
           </div>
-          <div class="row text-start">
+          <div class="row text-start mt-3">
+            <?php
+            foreach ($memories as $memory) {
+              echo '<div class="col-sm-4 text-center"><a class="ng-btn text-decoration-none" href="' . $memory['memory_link'] . '" target="_blank">' . $memory['memory_name'] . '</a></div>';
+            }
+            ?>
           </div>
         </div>
       </div>
