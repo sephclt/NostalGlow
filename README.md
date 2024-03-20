@@ -7,7 +7,7 @@ A website for a business that takes people's memories (consensually) and stores 
 > If possible use docker and docker-compose
 ### Using docker
 Ensure docker and docker-compose are installed then inside this directory run:
-```shell
+```bash
 docker-compose up --build
 ```
 ### Using XAMPP
