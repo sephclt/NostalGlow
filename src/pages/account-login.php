@@ -25,7 +25,7 @@ mysqli_free_result($rs);
 
 if ($row[2] != NULL) {
   $sub_id = $row[2];
-  $sql = "SELECT `item_name` FROM `products` WHERE `subscription` = '$sub_id'";
+  $sql = "SELECT `item_name` FROM `products` WHERE `item_id` = '$sub_id'";
   $rs = mysqli_query($conn, $sql);
   $sub = mysqli_fetch_row($rs);
 }
@@ -36,7 +36,7 @@ if ($sub_id == 0) {
 
 if ($row[0] == $password) {
   $_SESSION['username'] = $row[1];
-  $_SESSION['subscription'] = $sub;
+  $_SESSION['subscription'] = $sub[0];
   $_SESSION['sub_id'] = $sub_id;
   header("Location: user-dashboard.php");
   exit();
