@@ -31,7 +31,7 @@ CREATE TABLE `log_table` (
   `log_id` int NOT NULL,
   `action` varchar(30) NOT NULL,
   `timestamp` timestamp NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `log_table`
@@ -51,7 +51,7 @@ CREATE TABLE `messages` (
   `message_id` int NOT NULL,
   `sender_email` varchar(50) NOT NULL,
   `sender_message` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -128,7 +128,7 @@ CREATE TABLE `user_memories` (
   `user_id` int NOT NULL,
   `memory_link` varchar(100) NOT NULL,
   `memory_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_memories`
